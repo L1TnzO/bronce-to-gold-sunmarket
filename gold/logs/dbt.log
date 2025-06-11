@@ -1,0 +1,1947 @@
+[0m16:03:00.150140 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9e3894440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9e3894470>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9e38958e0>]}
+
+
+============================== 16:03:00.152362 | 25fff33e-5480-45c2-8563-914ae0afa825 ==============================
+[0m16:03:00.152362 [info ] [MainThread]: Running with dbt=1.7.19
+[0m16:03:00.153002 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'debug': 'False', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'introspect': 'True', 'quiet': 'False', 'partial_parse': 'True', 'target_path': 'None', 'log_path': '/home/enzo/universidad/tingdatos/taller_3_v2/gold/logs', 'printer_width': '80', 'use_experimental_parser': 'False', 'log_format': 'default', 'log_cache_events': 'False', 'profiles_dir': '/home/enzo/.dbt', 'static_parser': 'True', 'write_json': 'True', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True'}
+[0m16:03:00.154156 [info ] [MainThread]: dbt version: 1.7.19
+[0m16:03:00.154561 [info ] [MainThread]: python version: 3.12.2
+[0m16:03:00.154923 [info ] [MainThread]: python path: /home/enzo/anaconda3/bin/python
+[0m16:03:00.155299 [info ] [MainThread]: os info: Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m16:03:00.485747 [info ] [MainThread]: Using profiles dir at /home/enzo/.dbt
+[0m16:03:00.486440 [info ] [MainThread]: Using profiles.yml file at /home/enzo/.dbt/profiles.yml
+[0m16:03:00.486821 [info ] [MainThread]: Using dbt_project.yml file at /home/enzo/universidad/tingdatos/taller_3_v2/gold/dbt_project.yml
+[0m16:03:00.487947 [info ] [MainThread]: adapter type: mysql
+[0m16:03:00.488329 [info ] [MainThread]: adapter version: 1.7.0
+[0m16:03:00.582701 [info ] [MainThread]: Configuration:
+[0m16:03:00.583421 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m16:03:00.583814 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m16:03:00.584206 [info ] [MainThread]: Required dependencies:
+[0m16:03:00.584591 [debug] [MainThread]: Executing "git --help"
+[0m16:03:00.586275 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m16:03:00.586699 [debug] [MainThread]: STDERR: "b''"
+[0m16:03:00.587049 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m16:03:00.587422 [info ] [MainThread]: Connection:
+[0m16:03:00.587739 [info ] [MainThread]:   server: 127.0.0.1
+[0m16:03:00.588084 [info ] [MainThread]:   unix_socket: None
+[0m16:03:00.588380 [info ] [MainThread]:   port: 3306
+[0m16:03:00.588655 [info ] [MainThread]:   database: None
+[0m16:03:00.588930 [info ] [MainThread]:   schema: silver_db
+[0m16:03:00.589244 [info ] [MainThread]:   user: root
+[0m16:03:00.589615 [info ] [MainThread]: Registered adapter: mysql=1.7.0
+[0m16:03:00.590356 [debug] [MainThread]: Acquiring new mysql connection 'debug'
+[0m16:03:00.590746 [debug] [MainThread]: Using mysql connection "debug"
+[0m16:03:00.591074 [debug] [MainThread]: On debug: select 1 as id
+[0m16:03:00.591414 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:03:00.662795 [debug] [MainThread]: SQL status: SUCCESS 1 in 0.0 seconds
+[0m16:03:00.663769 [debug] [MainThread]: On debug: Close
+[0m16:03:00.665394 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m16:03:00.665822 [info ] [MainThread]: [32mAll checks passed![0m
+[0m16:03:00.667079 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 0.56804836, "process_user_time": 1.740296, "process_kernel_time": 0.139923, "process_mem_max_rss": "129100", "process_in_blocks": "95416", "process_out_blocks": "24"}
+[0m16:03:00.667606 [debug] [MainThread]: Command `dbt debug` succeeded at 16:03:00.667465 after 0.57 seconds
+[0m16:03:00.667968 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m16:03:00.668318 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9e450b0b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9e294c230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9e3b4e780>]}
+[0m16:03:00.668705 [debug] [MainThread]: Flushing usage events
+[0m16:03:08.895942 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ac65a47a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ac65a5640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ac65a5e80>]}
+
+
+============================== 16:03:08.898230 | aeb65acb-d5d9-4ccc-8c9b-bce3f00256a5 ==============================
+[0m16:03:08.898230 [info ] [MainThread]: Running with dbt=1.7.19
+[0m16:03:08.898916 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'warn_error': 'None', 'invocation_command': 'dbt run', 'log_path': '/home/enzo/universidad/tingdatos/taller_3_v2/gold/logs', 'static_parser': 'True', 'version_check': 'True', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'quiet': 'False', 'log_format': 'default', 'write_json': 'True', 'introspect': 'True', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'partial_parse': 'True', 'log_cache_events': 'False', 'printer_width': '80', 'target_path': 'None', 'profiles_dir': '/home/enzo/.dbt', 'debug': 'False', 'fail_fast': 'False', 'use_experimental_parser': 'False'}
+[0m16:03:09.364547 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'aeb65acb-d5d9-4ccc-8c9b-bce3f00256a5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ac52cbbf0>]}
+[0m16:03:09.495829 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'aeb65acb-d5d9-4ccc-8c9b-bce3f00256a5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ac526baa0>]}
+[0m16:03:09.496690 [info ] [MainThread]: Registered adapter: mysql=1.7.0
+[0m16:03:09.505365 [debug] [MainThread]: checksum: a8d43cdff37d0f32d7fbe4c5c25bea4bb6c86e162f8ce8fdb1a38cdcf7495431, vars: {}, profile: , target: , version: 1.7.19
+[0m16:03:09.506166 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m16:03:09.506641 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'aeb65acb-d5d9-4ccc-8c9b-bce3f00256a5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ac53fa210>]}
+[0m16:03:10.095057 [debug] [MainThread]: 1699: static parser successfully parsed kpi_dias_inventario.sql
+[0m16:03:10.110576 [debug] [MainThread]: 1699: static parser successfully parsed kpi_contribucion_utilidad.sql
+[0m16:03:10.113845 [debug] [MainThread]: 1699: static parser successfully parsed dashboard_kpis_criticos.sql
+[0m16:03:10.116619 [debug] [MainThread]: 1699: static parser successfully parsed kpi_rotacion_inventario.sql
+[0m16:03:10.119161 [debug] [MainThread]: 1699: static parser successfully parsed kpi_margen_bruto.sql
+[0m16:03:10.223970 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.inventario_analytics.kpi_dias_inventario' (models/kpi_dias_inventario.sql) depends on a node named 'ventas_limpias' which was not found
+[0m16:03:10.225486 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 1.3775079, "process_user_time": 2.384541, "process_kernel_time": 0.165083, "process_mem_max_rss": "138672", "process_in_blocks": "30552", "process_out_blocks": "8", "command_success": false}
+[0m16:03:10.226171 [debug] [MainThread]: Command `dbt run` failed at 16:03:10.226034 after 1.38 seconds
+[0m16:03:10.226590 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ac65a6a50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ac4ffc8f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ac405cbf0>]}
+[0m16:03:10.227002 [debug] [MainThread]: Flushing usage events
+[0m16:08:54.227094 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f548874d190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f54887bc7d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f54887bd5b0>]}
+
+
+============================== 16:08:54.229575 | 53e3745d-7acb-4cec-b197-51e4f9ce5c6a ==============================
+[0m16:08:54.229575 [info ] [MainThread]: Running with dbt=1.7.19
+[0m16:08:54.230226 [debug] [MainThread]: running dbt with arguments {'indirect_selection': 'eager', 'write_json': 'True', 'log_format': 'default', 'invocation_command': 'dbt run', 'target_path': 'None', 'no_print': 'None', 'static_parser': 'True', 'quiet': 'False', 'printer_width': '80', 'profiles_dir': '/home/enzo/.dbt', 'debug': 'False', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_path': '/home/enzo/universidad/tingdatos/taller_3_v2/gold/logs', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'partial_parse': 'True', 'log_cache_events': 'False', 'version_check': 'True'}
+[0m16:08:54.734819 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '53e3745d-7acb-4cec-b197-51e4f9ce5c6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f548880a3c0>]}
+[0m16:08:54.860770 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '53e3745d-7acb-4cec-b197-51e4f9ce5c6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f54876b7740>]}
+[0m16:08:54.862680 [info ] [MainThread]: Registered adapter: mysql=1.7.0
+[0m16:08:54.868892 [debug] [MainThread]: checksum: a8d43cdff37d0f32d7fbe4c5c25bea4bb6c86e162f8ce8fdb1a38cdcf7495431, vars: {}, profile: , target: , version: 1.7.19
+[0m16:08:54.869432 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m16:08:54.869917 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '53e3745d-7acb-4cec-b197-51e4f9ce5c6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f54874da3f0>]}
+[0m16:08:55.465872 [debug] [MainThread]: 1699: static parser successfully parsed kpi_dias_inventario.sql
+[0m16:08:55.481465 [debug] [MainThread]: 1699: static parser successfully parsed kpi_contribucion_utilidad.sql
+[0m16:08:55.485073 [debug] [MainThread]: 1699: static parser successfully parsed dashboard_kpis_criticos.sql
+[0m16:08:55.487633 [debug] [MainThread]: 1699: static parser successfully parsed kpi_rotacion_inventario.sql
+[0m16:08:55.490237 [debug] [MainThread]: 1699: static parser successfully parsed kpi_margen_bruto.sql
+[0m16:08:55.612380 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.inventario_analytics.gold
+- models.inventario_analytics.silver
+[0m16:08:55.616175 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '53e3745d-7acb-4cec-b197-51e4f9ce5c6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f548874eff0>]}
+[0m16:08:55.624787 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '53e3745d-7acb-4cec-b197-51e4f9ce5c6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f548724d4f0>]}
+[0m16:08:55.625444 [info ] [MainThread]: Found 5 models, 4 sources, 0 exposures, 0 metrics, 375 macros, 0 groups, 0 semantic models
+[0m16:08:55.625897 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '53e3745d-7acb-4cec-b197-51e4f9ce5c6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f548724b9e0>]}
+[0m16:08:55.627601 [info ] [MainThread]: 
+[0m16:08:55.628497 [debug] [MainThread]: Acquiring new mysql connection 'master'
+[0m16:08:55.629929 [debug] [ThreadPool]: Acquiring new mysql connection 'list_schemas'
+[0m16:08:55.638427 [debug] [ThreadPool]: Using mysql connection "list_schemas"
+[0m16:08:55.638989 [debug] [ThreadPool]: On list_schemas: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "connection_name": "list_schemas"} */
+select distinct schema_name
+        from information_schema.schemata
+[0m16:08:55.639354 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:08:55.671112 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.0 seconds
+[0m16:08:55.672517 [debug] [ThreadPool]: On list_schemas: Close
+[0m16:08:55.674945 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_schemas, now list_None_silver_db)
+[0m16:08:55.679161 [debug] [ThreadPool]: Using mysql connection "list_None_silver_db"
+[0m16:08:55.679527 [debug] [ThreadPool]: On list_None_silver_db: BEGIN
+[0m16:08:55.679831 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:08:55.689340 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:08:55.689708 [debug] [ThreadPool]: Using mysql connection "list_None_silver_db"
+[0m16:08:55.690038 [debug] [ThreadPool]: On list_None_silver_db: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "connection_name": "list_None_silver_db"} */
+select
+      null as "database",
+      table_name as name,
+      table_schema as "schema",
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+    from information_schema.tables
+    where table_schema = 'silver_db'
+  
+[0m16:08:55.695280 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.0 seconds
+[0m16:08:55.696454 [debug] [ThreadPool]: On list_None_silver_db: ROLLBACK
+[0m16:08:55.696973 [debug] [ThreadPool]: On list_None_silver_db: Close
+[0m16:08:55.699017 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '53e3745d-7acb-4cec-b197-51e4f9ce5c6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f54871d6570>]}
+[0m16:08:55.699491 [debug] [MainThread]: Using mysql connection "master"
+[0m16:08:55.699874 [debug] [MainThread]: On master: BEGIN
+[0m16:08:55.700254 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:08:55.709804 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:08:55.710263 [debug] [MainThread]: On master: COMMIT
+[0m16:08:55.710629 [debug] [MainThread]: Using mysql connection "master"
+[0m16:08:55.710935 [debug] [MainThread]: On master: COMMIT
+[0m16:08:55.711523 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:08:55.711869 [debug] [MainThread]: On master: Close
+[0m16:08:55.713644 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m16:08:55.714055 [info ] [MainThread]: 
+[0m16:08:55.721017 [debug] [Thread-1 (]: Began running node model.inventario_analytics.kpi_contribucion_utilidad
+[0m16:08:55.721633 [info ] [Thread-1 (]: 1 of 5 START sql table model silver_db.kpi_contribucion_utilidad ............... [RUN]
+[0m16:08:55.722368 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_None_silver_db, now model.inventario_analytics.kpi_contribucion_utilidad)
+[0m16:08:55.722775 [debug] [Thread-1 (]: Began compiling node model.inventario_analytics.kpi_contribucion_utilidad
+[0m16:08:55.729472 [debug] [Thread-1 (]: Writing injected SQL for node "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:08:55.731794 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_contribucion_utilidad (compile): 16:08:55.723021 => 16:08:55.731479
+[0m16:08:55.732255 [debug] [Thread-1 (]: Began executing node model.inventario_analytics.kpi_contribucion_utilidad
+[0m16:08:55.768664 [debug] [Thread-1 (]: Writing runtime sql for node "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:08:55.770670 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:08:55.771358 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: BEGIN
+[0m16:08:55.771877 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:08:55.784983 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:08:55.785686 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:08:55.786151 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_contribucion_utilidad"} */
+
+  
+    
+
+  create  table
+    `silver_db`.`kpi_contribucion_utilidad__dbt_tmp`
+    
+    
+      as
+    
+    (
+      
+
+WITH ventas_con_margen AS (
+    SELECT 
+        v.codigo_producto,
+        v.descripcion,
+        v.precio,
+        v.cantidad,
+        v.total as ingresos,
+        p.valor_compra,
+        (v.precio - p.valor_compra) as margen_unitario,
+        (v.precio - p.valor_compra) * v.cantidad as contribucion_utilidad,
+        EXTRACT(YEAR_MONTH FROM v.fecha) as periodo_mes
+    FROM `silver_db`.`ventas_limpias` v
+    LEFT JOIN `silver_db`.`productos_master` p ON v.codigo_producto = p.codigo
+    WHERE v.tipo_transaccion = 'VENTA' AND p.codigo IS NOT NULL
+)
+
+SELECT 
+    codigo_producto,
+    descripcion,
+    periodo_mes,
+    SUM(cantidad) as unidades_vendidas,
+    SUM(ingresos) as ingresos_totales,
+    AVG(margen_unitario) as margen_unitario_promedio,
+    SUM(contribucion_utilidad) as contribucion_utilidad_total,
+    ROUND(SUM(contribucion_utilidad) / SUM(SUM(contribucion_utilidad)) OVER() * 100, 2) as pct_contribucion_total
+FROM ventas_con_margen
+GROUP BY codigo_producto, descripcion, periodo_mes
+ORDER BY contribucion_utilidad_total DESC
+    )
+
+  
+[0m16:08:55.800933 [debug] [Thread-1 (]: mysql adapter: MySQL error: 1146 (42S02): Table 'silver_db.productos_master' doesn't exist
+[0m16:08:55.801863 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: ROLLBACK
+[0m16:08:55.803332 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_contribucion_utilidad (execute): 16:08:55.732503 => 16:08:55.802950
+[0m16:08:55.803870 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: Close
+[0m16:08:55.817180 [debug] [Thread-1 (]: Database Error in model kpi_contribucion_utilidad (models/kpi_contribucion_utilidad.sql)
+  1146 (42S02): Table 'silver_db.productos_master' doesn't exist
+  compiled Code at target/run/inventario_analytics/models/kpi_contribucion_utilidad.sql
+[0m16:08:55.817754 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '53e3745d-7acb-4cec-b197-51e4f9ce5c6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f54873f6f60>]}
+[0m16:08:55.818381 [error] [Thread-1 (]: 1 of 5 ERROR creating sql table model silver_db.kpi_contribucion_utilidad ...... [[31mERROR[0m in 0.10s]
+[0m16:08:55.819136 [debug] [Thread-1 (]: Finished running node model.inventario_analytics.kpi_contribucion_utilidad
+[0m16:08:55.819597 [debug] [Thread-1 (]: Began running node model.inventario_analytics.kpi_dias_inventario
+[0m16:08:55.820296 [info ] [Thread-1 (]: 2 of 5 START sql table model silver_db.kpi_dias_inventario ..................... [RUN]
+[0m16:08:55.821069 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.inventario_analytics.kpi_contribucion_utilidad, now model.inventario_analytics.kpi_dias_inventario)
+[0m16:08:55.821464 [debug] [Thread-1 (]: Began compiling node model.inventario_analytics.kpi_dias_inventario
+[0m16:08:55.824583 [debug] [Thread-1 (]: Writing injected SQL for node "model.inventario_analytics.kpi_dias_inventario"
+[0m16:08:55.825971 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_dias_inventario (compile): 16:08:55.821743 => 16:08:55.825706
+[0m16:08:55.826349 [debug] [Thread-1 (]: Began executing node model.inventario_analytics.kpi_dias_inventario
+[0m16:08:55.829739 [debug] [Thread-1 (]: Writing runtime sql for node "model.inventario_analytics.kpi_dias_inventario"
+[0m16:08:55.830456 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_dias_inventario"
+[0m16:08:55.830813 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_dias_inventario: BEGIN
+[0m16:08:55.831152 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:08:55.841942 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:08:55.842524 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_dias_inventario"
+[0m16:08:55.842971 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_dias_inventario: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_dias_inventario"} */
+
+  
+    
+
+  create  table
+    `silver_db`.`kpi_dias_inventario__dbt_tmp`
+    
+    
+      as
+    
+    (
+      
+
+WITH ventas_diarias AS (
+    SELECT 
+        codigo_producto,
+        descripcion,
+        DATE(fecha) as fecha_venta,
+        SUM(cantidad) as cantidad_vendida_dia
+    FROM `silver_db`.`ventas_limpias`
+    WHERE tipo_transaccion = 'VENTA'
+    GROUP BY codigo_producto, descripcion, DATE(fecha)
+),
+
+promedio_ventas AS (
+    SELECT 
+        codigo_producto,
+        descripcion,
+        AVG(cantidad_vendida_dia) as venta_promedio_diaria,
+        COUNT(DISTINCT fecha_venta) as dias_con_ventas
+    FROM ventas_diarias
+    GROUP BY codigo_producto, descripcion
+)
+
+SELECT 
+    p.codigo as codigo_producto,
+    p.descripcion,
+    p.bod_1 as stock_actual,
+    COALESCE(v.venta_promedio_diaria, 0) as venta_promedio_diaria,
+    v.dias_con_ventas,
+    CASE 
+        WHEN v.venta_promedio_diaria > 0 
+        THEN ROUND(p.bod_1 / v.venta_promedio_diaria, 0)
+        ELSE 999 
+    END as dias_inventario_disponible,
+    CASE 
+        WHEN dias_inventario_disponible > 90 THEN 'EXCESO'
+        WHEN dias_inventario_disponible BETWEEN 30 AND 90 THEN 'NORMAL'
+        WHEN dias_inventario_disponible BETWEEN 7 AND 29 THEN 'BAJO'
+        WHEN dias_inventario_disponible < 7 THEN 'CRITICO'
+        ELSE 'SIN_VENTAS'
+    END as alerta_stock
+FROM `silver_db`.`productos_master` p
+LEFT JOIN promedio_ventas v ON p.codigo = v.codigo_producto
+WHERE p.bod_1 > 0
+ORDER BY dias_inventario_disponible ASC
+    )
+
+  
+[0m16:08:55.847767 [debug] [Thread-1 (]: mysql adapter: MySQL error: 1146 (42S02): Table 'silver_db.productos_master' doesn't exist
+[0m16:08:55.848193 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_dias_inventario: ROLLBACK
+[0m16:08:55.848906 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_dias_inventario (execute): 16:08:55.826591 => 16:08:55.848692
+[0m16:08:55.849273 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_dias_inventario: Close
+[0m16:08:55.852135 [debug] [Thread-1 (]: Database Error in model kpi_dias_inventario (models/kpi_dias_inventario.sql)
+  1146 (42S02): Table 'silver_db.productos_master' doesn't exist
+  compiled Code at target/run/inventario_analytics/models/kpi_dias_inventario.sql
+[0m16:08:55.852604 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '53e3745d-7acb-4cec-b197-51e4f9ce5c6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5484f264b0>]}
+[0m16:08:55.853171 [error] [Thread-1 (]: 2 of 5 ERROR creating sql table model silver_db.kpi_dias_inventario ............ [[31mERROR[0m in 0.03s]
+[0m16:08:55.853747 [debug] [Thread-1 (]: Finished running node model.inventario_analytics.kpi_dias_inventario
+[0m16:08:55.854175 [debug] [Thread-1 (]: Began running node model.inventario_analytics.kpi_margen_bruto
+[0m16:08:55.854618 [info ] [Thread-1 (]: 3 of 5 START sql table model silver_db.kpi_margen_bruto ........................ [RUN]
+[0m16:08:55.855553 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.inventario_analytics.kpi_dias_inventario, now model.inventario_analytics.kpi_margen_bruto)
+[0m16:08:55.855934 [debug] [Thread-1 (]: Began compiling node model.inventario_analytics.kpi_margen_bruto
+[0m16:08:55.858827 [debug] [Thread-1 (]: Writing injected SQL for node "model.inventario_analytics.kpi_margen_bruto"
+[0m16:08:55.859505 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_margen_bruto (compile): 16:08:55.856208 => 16:08:55.859273
+[0m16:08:55.859879 [debug] [Thread-1 (]: Began executing node model.inventario_analytics.kpi_margen_bruto
+[0m16:08:55.863055 [debug] [Thread-1 (]: Writing runtime sql for node "model.inventario_analytics.kpi_margen_bruto"
+[0m16:08:55.863642 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_margen_bruto"
+[0m16:08:55.864011 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: BEGIN
+[0m16:08:55.864341 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:08:55.874693 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:08:55.875222 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_margen_bruto"
+[0m16:08:55.875628 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_margen_bruto"} */
+
+  
+    
+
+  create  table
+    `silver_db`.`kpi_margen_bruto__dbt_tmp`
+    
+    
+      as
+    
+    (
+      
+
+WITH productos_con_precios AS (
+    SELECT 
+        codigo,
+        descripcion,
+        valor_compra,
+        lista_1 as precio_venta,
+        CASE 
+            WHEN lista_1 > 0 
+            THEN ROUND(((lista_1 - valor_compra) / lista_1) * 100, 2)
+            ELSE 0 
+        END as margen_bruto_pct,
+        lista_1 - valor_compra as margen_bruto_absoluto
+    FROM `silver_db`.`productos_master`
+    WHERE lista_1 > 0 AND valor_compra > 0
+)
+
+SELECT 
+    codigo,
+    descripcion,
+    valor_compra,
+    precio_venta,
+    margen_bruto_pct,
+    margen_bruto_absoluto,
+    CASE 
+        WHEN margen_bruto_pct < 20 THEN 'BAJO'
+        WHEN margen_bruto_pct BETWEEN 20 AND 40 THEN 'MEDIO'
+        ELSE 'ALTO'
+    END as clasificacion_margen
+FROM productos_con_precios
+ORDER BY margen_bruto_pct DESC
+    )
+
+  
+[0m16:08:55.881116 [debug] [Thread-1 (]: mysql adapter: MySQL error: 1146 (42S02): Table 'silver_db.productos_master' doesn't exist
+[0m16:08:55.881608 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: ROLLBACK
+[0m16:08:55.882371 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_margen_bruto (execute): 16:08:55.860125 => 16:08:55.882134
+[0m16:08:55.882781 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: Close
+[0m16:08:55.885432 [debug] [Thread-1 (]: Database Error in model kpi_margen_bruto (models/kpi_margen_bruto.sql)
+  1146 (42S02): Table 'silver_db.productos_master' doesn't exist
+  compiled Code at target/run/inventario_analytics/models/kpi_margen_bruto.sql
+[0m16:08:55.885894 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '53e3745d-7acb-4cec-b197-51e4f9ce5c6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5484f25d90>]}
+[0m16:08:55.886495 [error] [Thread-1 (]: 3 of 5 ERROR creating sql table model silver_db.kpi_margen_bruto ............... [[31mERROR[0m in 0.03s]
+[0m16:08:55.887069 [debug] [Thread-1 (]: Finished running node model.inventario_analytics.kpi_margen_bruto
+[0m16:08:55.887492 [debug] [Thread-1 (]: Began running node model.inventario_analytics.kpi_rotacion_inventario
+[0m16:08:55.888023 [info ] [Thread-1 (]: 4 of 5 START sql table model silver_db.kpi_rotacion_inventario ................. [RUN]
+[0m16:08:55.888679 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.inventario_analytics.kpi_margen_bruto, now model.inventario_analytics.kpi_rotacion_inventario)
+[0m16:08:55.889045 [debug] [Thread-1 (]: Began compiling node model.inventario_analytics.kpi_rotacion_inventario
+[0m16:08:55.891804 [debug] [Thread-1 (]: Writing injected SQL for node "model.inventario_analytics.kpi_rotacion_inventario"
+[0m16:08:55.892425 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_rotacion_inventario (compile): 16:08:55.889283 => 16:08:55.892227
+[0m16:08:55.892774 [debug] [Thread-1 (]: Began executing node model.inventario_analytics.kpi_rotacion_inventario
+[0m16:08:55.897349 [debug] [Thread-1 (]: Writing runtime sql for node "model.inventario_analytics.kpi_rotacion_inventario"
+[0m16:08:55.897918 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_rotacion_inventario"
+[0m16:08:55.898285 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_rotacion_inventario: BEGIN
+[0m16:08:55.898633 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:08:55.909298 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:08:55.909891 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_rotacion_inventario"
+[0m16:08:55.910322 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_rotacion_inventario: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_rotacion_inventario"} */
+
+  
+    
+
+  create  table
+    `silver_db`.`kpi_rotacion_inventario__dbt_tmp`
+    
+    
+      as
+    
+    (
+      
+
+WITH ventas_agregadas AS (
+    SELECT 
+        codigo_producto,
+        descripcion,
+        SUM(total) as costo_productos_vendidos,
+        COUNT(*) as num_transacciones
+    FROM `silver_db`.`ventas_limpias`
+    WHERE tipo_transaccion = 'VENTA'
+    GROUP BY codigo_producto, descripcion
+),
+
+inventario_actual AS (
+    SELECT 
+        codigo,
+        descripcion,
+        valor_compra * bod_1 as valor_inventario_actual,
+        bod_1 as stock_actual
+    FROM `silver_db`.`productos_master`
+    WHERE bod_1 > 0
+)
+
+SELECT 
+    v.codigo_producto,
+    v.descripcion,
+    v.costo_productos_vendidos,
+    i.valor_inventario_actual as inventario_promedio,
+    CASE 
+        WHEN i.valor_inventario_actual > 0 
+        THEN ROUND(v.costo_productos_vendidos / i.valor_inventario_actual, 2)
+        ELSE 0 
+    END as rotacion_inventario,
+    CASE 
+        WHEN rotacion_inventario < 2 THEN 'BAJA'
+        WHEN rotacion_inventario BETWEEN 2 AND 6 THEN 'MEDIA'
+        ELSE 'ALTA'
+    END as clasificacion_rotacion,
+    i.stock_actual,
+    v.num_transacciones
+FROM ventas_agregadas v
+LEFT JOIN inventario_actual i ON v.codigo_producto = i.codigo
+WHERE i.codigo IS NOT NULL
+    )
+
+  
+[0m16:08:55.915873 [debug] [Thread-1 (]: mysql adapter: MySQL error: 1146 (42S02): Table 'silver_db.productos_master' doesn't exist
+[0m16:08:55.916342 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_rotacion_inventario: ROLLBACK
+[0m16:08:55.917044 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_rotacion_inventario (execute): 16:08:55.893001 => 16:08:55.916827
+[0m16:08:55.917413 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_rotacion_inventario: Close
+[0m16:08:55.920083 [debug] [Thread-1 (]: Database Error in model kpi_rotacion_inventario (models/kpi_rotacion_inventario.sql)
+  1146 (42S02): Table 'silver_db.productos_master' doesn't exist
+  compiled Code at target/run/inventario_analytics/models/kpi_rotacion_inventario.sql
+[0m16:08:55.920554 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '53e3745d-7acb-4cec-b197-51e4f9ce5c6a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f548463b290>]}
+[0m16:08:55.921196 [error] [Thread-1 (]: 4 of 5 ERROR creating sql table model silver_db.kpi_rotacion_inventario ........ [[31mERROR[0m in 0.03s]
+[0m16:08:55.921766 [debug] [Thread-1 (]: Finished running node model.inventario_analytics.kpi_rotacion_inventario
+[0m16:08:55.922836 [debug] [Thread-1 (]: Began running node model.inventario_analytics.dashboard_kpis_criticos
+[0m16:08:55.923232 [info ] [Thread-1 (]: 5 of 5 SKIP relation silver_db.dashboard_kpis_criticos ......................... [[33mSKIP[0m]
+[0m16:08:55.923820 [debug] [Thread-1 (]: Finished running node model.inventario_analytics.dashboard_kpis_criticos
+[0m16:08:55.925405 [debug] [MainThread]: Using mysql connection "master"
+[0m16:08:55.925756 [debug] [MainThread]: On master: BEGIN
+[0m16:08:55.926061 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m16:08:55.936725 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:08:55.937271 [debug] [MainThread]: On master: COMMIT
+[0m16:08:55.937629 [debug] [MainThread]: Using mysql connection "master"
+[0m16:08:55.937935 [debug] [MainThread]: On master: COMMIT
+[0m16:08:55.938625 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:08:55.939031 [debug] [MainThread]: On master: Close
+[0m16:08:55.941331 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:08:55.941693 [debug] [MainThread]: Connection 'model.inventario_analytics.kpi_rotacion_inventario' was properly closed.
+[0m16:08:55.942138 [info ] [MainThread]: 
+[0m16:08:55.942534 [info ] [MainThread]: Finished running 5 table models in 0 hours 0 minutes and 0.31 seconds (0.31s).
+[0m16:08:55.943597 [debug] [MainThread]: Command end result
+[0m16:08:55.949194 [info ] [MainThread]: 
+[0m16:08:55.949694 [info ] [MainThread]: [31mCompleted with 4 errors and 0 warnings:[0m
+[0m16:08:55.950065 [info ] [MainThread]: 
+[0m16:08:55.950409 [error] [MainThread]:   Database Error in model kpi_contribucion_utilidad (models/kpi_contribucion_utilidad.sql)
+  1146 (42S02): Table 'silver_db.productos_master' doesn't exist
+  compiled Code at target/run/inventario_analytics/models/kpi_contribucion_utilidad.sql
+[0m16:08:55.950734 [info ] [MainThread]: 
+[0m16:08:55.951054 [error] [MainThread]:   Database Error in model kpi_dias_inventario (models/kpi_dias_inventario.sql)
+  1146 (42S02): Table 'silver_db.productos_master' doesn't exist
+  compiled Code at target/run/inventario_analytics/models/kpi_dias_inventario.sql
+[0m16:08:55.951366 [info ] [MainThread]: 
+[0m16:08:55.951662 [error] [MainThread]:   Database Error in model kpi_margen_bruto (models/kpi_margen_bruto.sql)
+  1146 (42S02): Table 'silver_db.productos_master' doesn't exist
+  compiled Code at target/run/inventario_analytics/models/kpi_margen_bruto.sql
+[0m16:08:55.952015 [info ] [MainThread]: 
+[0m16:08:55.952322 [error] [MainThread]:   Database Error in model kpi_rotacion_inventario (models/kpi_rotacion_inventario.sql)
+  1146 (42S02): Table 'silver_db.productos_master' doesn't exist
+  compiled Code at target/run/inventario_analytics/models/kpi_rotacion_inventario.sql
+[0m16:08:55.952633 [info ] [MainThread]: 
+[0m16:08:55.953000 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=4 SKIP=1 TOTAL=5
+[0m16:08:55.955114 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 1.7778504, "process_user_time": 2.663146, "process_kernel_time": 0.18007, "process_mem_max_rss": "142728", "process_in_blocks": "97840", "process_out_blocks": "2400", "command_success": false}
+[0m16:08:55.955740 [debug] [MainThread]: Command `dbt run` failed at 16:08:55.955600 after 1.78 seconds
+[0m16:08:55.956154 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5488583920>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5488a4d880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5485044d70>]}
+[0m16:08:55.956575 [debug] [MainThread]: Flushing usage events
+[0m16:12:05.237117 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea82db8aa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea831876e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea83040620>]}
+
+
+============================== 16:12:05.238958 | 5941c56e-66a1-4760-bf52-dc03ef05bf3e ==============================
+[0m16:12:05.238958 [info ] [MainThread]: Running with dbt=1.7.19
+[0m16:12:05.239613 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'invocation_command': 'dbt run', 'printer_width': '80', 'indirect_selection': 'eager', 'version_check': 'True', 'introspect': 'True', 'log_path': '/home/enzo/universidad/tingdatos/taller_3_v2/gold/logs', 'debug': 'False', 'profiles_dir': '/home/enzo/.dbt', 'send_anonymous_usage_stats': 'True', 'target_path': 'None', 'log_format': 'default', 'no_print': 'None', 'write_json': 'True', 'quiet': 'False', 'fail_fast': 'False', 'static_parser': 'True', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'partial_parse': 'True', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'use_colors': 'True'}
+[0m16:12:05.542463 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5941c56e-66a1-4760-bf52-dc03ef05bf3e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea81c480b0>]}
+[0m16:12:05.686794 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5941c56e-66a1-4760-bf52-dc03ef05bf3e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea81ed78c0>]}
+[0m16:12:05.687945 [info ] [MainThread]: Registered adapter: mysql=1.7.0
+[0m16:12:05.694149 [debug] [MainThread]: checksum: a8d43cdff37d0f32d7fbe4c5c25bea4bb6c86e162f8ce8fdb1a38cdcf7495431, vars: {}, profile: , target: , version: 1.7.19
+[0m16:12:05.726929 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m16:12:05.727437 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m16:12:05.728106 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.inventario_analytics.silver
+- models.inventario_analytics.gold
+[0m16:12:05.732389 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '5941c56e-66a1-4760-bf52-dc03ef05bf3e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea81c1ef90>]}
+[0m16:12:05.738942 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '5941c56e-66a1-4760-bf52-dc03ef05bf3e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea81bb8b00>]}
+[0m16:12:05.739692 [info ] [MainThread]: Found 5 models, 4 sources, 0 exposures, 0 metrics, 375 macros, 0 groups, 0 semantic models
+[0m16:12:05.740191 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5941c56e-66a1-4760-bf52-dc03ef05bf3e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea81ed7c20>]}
+[0m16:12:05.741826 [info ] [MainThread]: 
+[0m16:12:05.742645 [debug] [MainThread]: Acquiring new mysql connection 'master'
+[0m16:12:05.744098 [debug] [ThreadPool]: Acquiring new mysql connection 'list_schemas'
+[0m16:12:05.753348 [debug] [ThreadPool]: Using mysql connection "list_schemas"
+[0m16:12:05.754091 [debug] [ThreadPool]: On list_schemas: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "connection_name": "list_schemas"} */
+select distinct schema_name
+        from information_schema.schemata
+[0m16:12:05.754669 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:12:05.768536 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.0 seconds
+[0m16:12:05.770458 [debug] [ThreadPool]: On list_schemas: Close
+[0m16:12:05.773091 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_schemas, now list_None_silver_db)
+[0m16:12:05.777562 [debug] [ThreadPool]: Using mysql connection "list_None_silver_db"
+[0m16:12:05.778028 [debug] [ThreadPool]: On list_None_silver_db: BEGIN
+[0m16:12:05.778357 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:12:05.787852 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:12:05.788330 [debug] [ThreadPool]: Using mysql connection "list_None_silver_db"
+[0m16:12:05.788674 [debug] [ThreadPool]: On list_None_silver_db: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "connection_name": "list_None_silver_db"} */
+select
+      null as "database",
+      table_name as name,
+      table_schema as "schema",
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+    from information_schema.tables
+    where table_schema = 'silver_db'
+  
+[0m16:12:05.790750 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.0 seconds
+[0m16:12:05.792101 [debug] [ThreadPool]: On list_None_silver_db: ROLLBACK
+[0m16:12:05.792737 [debug] [ThreadPool]: On list_None_silver_db: Close
+[0m16:12:05.795115 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5941c56e-66a1-4760-bf52-dc03ef05bf3e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea81cf03e0>]}
+[0m16:12:05.795575 [debug] [MainThread]: Using mysql connection "master"
+[0m16:12:05.795919 [debug] [MainThread]: On master: BEGIN
+[0m16:12:05.796224 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:12:05.806927 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:12:05.808019 [debug] [MainThread]: On master: COMMIT
+[0m16:12:05.808599 [debug] [MainThread]: Using mysql connection "master"
+[0m16:12:05.808917 [debug] [MainThread]: On master: COMMIT
+[0m16:12:05.809672 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:12:05.810026 [debug] [MainThread]: On master: Close
+[0m16:12:05.812118 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m16:12:05.812531 [info ] [MainThread]: 
+[0m16:12:05.816819 [debug] [Thread-1 (]: Began running node model.inventario_analytics.kpi_contribucion_utilidad
+[0m16:12:05.817563 [info ] [Thread-1 (]: 1 of 5 START sql table model silver_db.kpi_contribucion_utilidad ............... [RUN]
+[0m16:12:05.818304 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_None_silver_db, now model.inventario_analytics.kpi_contribucion_utilidad)
+[0m16:12:05.818687 [debug] [Thread-1 (]: Began compiling node model.inventario_analytics.kpi_contribucion_utilidad
+[0m16:12:05.825600 [debug] [Thread-1 (]: Writing injected SQL for node "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:12:05.826517 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_contribucion_utilidad (compile): 16:12:05.818948 => 16:12:05.826226
+[0m16:12:05.826933 [debug] [Thread-1 (]: Began executing node model.inventario_analytics.kpi_contribucion_utilidad
+[0m16:12:05.855841 [debug] [Thread-1 (]: Writing runtime sql for node "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:12:05.856736 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:12:05.857198 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: BEGIN
+[0m16:12:05.857576 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:12:05.867685 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:12:05.868581 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:12:05.869094 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_contribucion_utilidad"} */
+
+  
+    
+
+  create  table
+    `silver_db`.`kpi_contribucion_utilidad__dbt_tmp`
+    
+    
+      as
+    
+    (
+      
+
+WITH ventas_con_margen AS (
+    SELECT 
+        v.codigo_producto,
+        v.descripcion,
+        v.precio,
+        v.cantidad,
+        v.total as ingresos,
+        p.valor_compra,
+        (v.precio - p.valor_compra) as margen_unitario,
+        (v.precio - p.valor_compra) * v.cantidad as contribucion_utilidad,
+        EXTRACT(YEAR_MONTH FROM v.fecha) as periodo_mes
+    FROM `silver_db`.`ventas_limpias` v
+    LEFT JOIN `silver_db`.`productos_master` p ON v.codigo_producto = p.codigo
+    WHERE v.tipo_transaccion = 'VENTA' AND p.codigo IS NOT NULL
+)
+
+SELECT 
+    codigo_producto,
+    descripcion,
+    periodo_mes,
+    SUM(cantidad) as unidades_vendidas,
+    SUM(ingresos) as ingresos_totales,
+    AVG(margen_unitario) as margen_unitario_promedio,
+    SUM(contribucion_utilidad) as contribucion_utilidad_total,
+    ROUND(SUM(contribucion_utilidad) / SUM(SUM(contribucion_utilidad)) OVER() * 100, 2) as pct_contribucion_total
+FROM ventas_con_margen
+GROUP BY codigo_producto, descripcion, periodo_mes
+ORDER BY contribucion_utilidad_total DESC
+    )
+
+  
+[0m16:12:05.949135 [debug] [Thread-1 (]: SQL status: SUCCESS 213 in 0.0 seconds
+[0m16:12:05.955927 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:12:05.956506 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_contribucion_utilidad"} */
+
+    drop table if exists `silver_db`.`kpi_contribucion_utilidad` cascade
+  
+[0m16:12:05.962022 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:12:05.963178 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:12:05.963622 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_contribucion_utilidad"} */
+
+    rename table `silver_db`.`kpi_contribucion_utilidad__dbt_tmp` to `silver_db`.`kpi_contribucion_utilidad`
+  
+[0m16:12:06.003856 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:12:06.019834 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: COMMIT
+[0m16:12:06.020532 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:12:06.021018 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: COMMIT
+[0m16:12:06.021972 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:12:06.025987 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:12:06.026408 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_contribucion_utilidad"} */
+drop table if exists `silver_db`.`kpi_contribucion_utilidad__dbt_backup`
+[0m16:12:06.031117 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:12:06.032585 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_contribucion_utilidad (execute): 16:12:05.827203 => 16:12:06.032380
+[0m16:12:06.033006 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: Close
+[0m16:12:06.034466 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5941c56e-66a1-4760-bf52-dc03ef05bf3e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea81b8e810>]}
+[0m16:12:06.035124 [info ] [Thread-1 (]: 1 of 5 OK created sql table model silver_db.kpi_contribucion_utilidad .......... [[32mSUCCESS 213[0m in 0.22s]
+[0m16:12:06.035805 [debug] [Thread-1 (]: Finished running node model.inventario_analytics.kpi_contribucion_utilidad
+[0m16:12:06.036300 [debug] [Thread-1 (]: Began running node model.inventario_analytics.kpi_dias_inventario
+[0m16:12:06.036841 [info ] [Thread-1 (]: 2 of 5 START sql table model silver_db.kpi_dias_inventario ..................... [RUN]
+[0m16:12:06.037480 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.inventario_analytics.kpi_contribucion_utilidad, now model.inventario_analytics.kpi_dias_inventario)
+[0m16:12:06.037851 [debug] [Thread-1 (]: Began compiling node model.inventario_analytics.kpi_dias_inventario
+[0m16:12:06.041715 [debug] [Thread-1 (]: Writing injected SQL for node "model.inventario_analytics.kpi_dias_inventario"
+[0m16:12:06.042754 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_dias_inventario (compile): 16:12:06.038082 => 16:12:06.042494
+[0m16:12:06.043174 [debug] [Thread-1 (]: Began executing node model.inventario_analytics.kpi_dias_inventario
+[0m16:12:06.046274 [debug] [Thread-1 (]: Writing runtime sql for node "model.inventario_analytics.kpi_dias_inventario"
+[0m16:12:06.046904 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_dias_inventario"
+[0m16:12:06.047300 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_dias_inventario: BEGIN
+[0m16:12:06.047660 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:12:06.058396 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:12:06.059006 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_dias_inventario"
+[0m16:12:06.059507 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_dias_inventario: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_dias_inventario"} */
+
+  
+    
+
+  create  table
+    `silver_db`.`kpi_dias_inventario__dbt_tmp`
+    
+    
+      as
+    
+    (
+      
+
+WITH ventas_diarias AS (
+    SELECT 
+        codigo_producto,
+        descripcion,
+        DATE(fecha) as fecha_venta,
+        SUM(cantidad) as cantidad_vendida_dia
+    FROM `silver_db`.`ventas_limpias`
+    WHERE tipo_transaccion = 'VENTA'
+    GROUP BY codigo_producto, descripcion, DATE(fecha)
+),
+
+promedio_ventas AS (
+    SELECT 
+        codigo_producto,
+        descripcion,
+        AVG(cantidad_vendida_dia) as venta_promedio_diaria,
+        COUNT(DISTINCT fecha_venta) as dias_con_ventas
+    FROM ventas_diarias
+    GROUP BY codigo_producto, descripcion
+)
+
+SELECT 
+    p.codigo as codigo_producto,
+    p.descripcion,
+    p.bod_1 as stock_actual,
+    COALESCE(v.venta_promedio_diaria, 0) as venta_promedio_diaria,
+    v.dias_con_ventas,
+    CASE 
+        WHEN v.venta_promedio_diaria > 0 
+        THEN ROUND(p.bod_1 / v.venta_promedio_diaria, 0)
+        ELSE 999 
+    END as dias_inventario_disponible,
+    CASE 
+        WHEN dias_inventario_disponible > 90 THEN 'EXCESO'
+        WHEN dias_inventario_disponible BETWEEN 30 AND 90 THEN 'NORMAL'
+        WHEN dias_inventario_disponible BETWEEN 7 AND 29 THEN 'BAJO'
+        WHEN dias_inventario_disponible < 7 THEN 'CRITICO'
+        ELSE 'SIN_VENTAS'
+    END as alerta_stock
+FROM `silver_db`.`productos_master` p
+LEFT JOIN promedio_ventas v ON p.codigo = v.codigo_producto
+WHERE p.bod_1 > 0
+ORDER BY dias_inventario_disponible ASC
+    )
+
+  
+[0m16:12:06.063008 [debug] [Thread-1 (]: mysql adapter: MySQL error: 1054 (42S22): Unknown column 'dias_inventario_disponible' in 'field list'
+[0m16:12:06.063546 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_dias_inventario: ROLLBACK
+[0m16:12:06.064435 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_dias_inventario (execute): 16:12:06.043404 => 16:12:06.064168
+[0m16:12:06.064873 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_dias_inventario: Close
+[0m16:12:06.069059 [debug] [Thread-1 (]: Database Error in model kpi_dias_inventario (models/kpi_dias_inventario.sql)
+  1054 (42S22): Unknown column 'dias_inventario_disponible' in 'field list'
+  compiled Code at target/run/inventario_analytics/models/kpi_dias_inventario.sql
+[0m16:12:06.069573 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5941c56e-66a1-4760-bf52-dc03ef05bf3e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea80135a30>]}
+[0m16:12:06.070216 [error] [Thread-1 (]: 2 of 5 ERROR creating sql table model silver_db.kpi_dias_inventario ............ [[31mERROR[0m in 0.03s]
+[0m16:12:06.071041 [debug] [Thread-1 (]: Finished running node model.inventario_analytics.kpi_dias_inventario
+[0m16:12:06.071501 [debug] [Thread-1 (]: Began running node model.inventario_analytics.kpi_margen_bruto
+[0m16:12:06.073086 [info ] [Thread-1 (]: 3 of 5 START sql table model silver_db.kpi_margen_bruto ........................ [RUN]
+[0m16:12:06.073786 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.inventario_analytics.kpi_dias_inventario, now model.inventario_analytics.kpi_margen_bruto)
+[0m16:12:06.074158 [debug] [Thread-1 (]: Began compiling node model.inventario_analytics.kpi_margen_bruto
+[0m16:12:06.076515 [debug] [Thread-1 (]: Writing injected SQL for node "model.inventario_analytics.kpi_margen_bruto"
+[0m16:12:06.077147 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_margen_bruto (compile): 16:12:06.074387 => 16:12:06.076948
+[0m16:12:06.077517 [debug] [Thread-1 (]: Began executing node model.inventario_analytics.kpi_margen_bruto
+[0m16:12:06.081085 [debug] [Thread-1 (]: Writing runtime sql for node "model.inventario_analytics.kpi_margen_bruto"
+[0m16:12:06.081859 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_margen_bruto"
+[0m16:12:06.082251 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: BEGIN
+[0m16:12:06.082607 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:12:06.092890 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:12:06.093521 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_margen_bruto"
+[0m16:12:06.093932 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_margen_bruto"} */
+
+  
+    
+
+  create  table
+    `silver_db`.`kpi_margen_bruto__dbt_tmp`
+    
+    
+      as
+    
+    (
+      
+
+WITH productos_con_precios AS (
+    SELECT 
+        codigo,
+        descripcion,
+        valor_compra,
+        lista_1 as precio_venta,
+        CASE 
+            WHEN lista_1 > 0 
+            THEN ROUND(((lista_1 - valor_compra) / lista_1) * 100, 2)
+            ELSE 0 
+        END as margen_bruto_pct,
+        lista_1 - valor_compra as margen_bruto_absoluto
+    FROM `silver_db`.`productos_master`
+    WHERE lista_1 > 0 AND valor_compra > 0
+)
+
+SELECT 
+    codigo,
+    descripcion,
+    valor_compra,
+    precio_venta,
+    margen_bruto_pct,
+    margen_bruto_absoluto,
+    CASE 
+        WHEN margen_bruto_pct < 20 THEN 'BAJO'
+        WHEN margen_bruto_pct BETWEEN 20 AND 40 THEN 'MEDIO'
+        ELSE 'ALTO'
+    END as clasificacion_margen
+FROM productos_con_precios
+ORDER BY margen_bruto_pct DESC
+    )
+
+  
+[0m16:12:06.144630 [debug] [Thread-1 (]: SQL status: SUCCESS 25 in 0.0 seconds
+[0m16:12:06.147756 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_margen_bruto"
+[0m16:12:06.148193 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_margen_bruto"} */
+
+    drop table if exists `silver_db`.`kpi_margen_bruto` cascade
+  
+[0m16:12:06.153079 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:12:06.154244 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_margen_bruto"
+[0m16:12:06.154655 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_margen_bruto"} */
+
+    rename table `silver_db`.`kpi_margen_bruto__dbt_tmp` to `silver_db`.`kpi_margen_bruto`
+  
+[0m16:12:06.186182 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:12:06.188363 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: COMMIT
+[0m16:12:06.188822 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_margen_bruto"
+[0m16:12:06.189202 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: COMMIT
+[0m16:12:06.189911 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:12:06.192186 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_margen_bruto"
+[0m16:12:06.192604 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_margen_bruto"} */
+drop table if exists `silver_db`.`kpi_margen_bruto__dbt_backup`
+[0m16:12:06.198753 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:12:06.200289 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_margen_bruto (execute): 16:12:06.077757 => 16:12:06.200091
+[0m16:12:06.200718 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: Close
+[0m16:12:06.202114 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5941c56e-66a1-4760-bf52-dc03ef05bf3e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea81f14ce0>]}
+[0m16:12:06.202713 [info ] [Thread-1 (]: 3 of 5 OK created sql table model silver_db.kpi_margen_bruto ................... [[32mSUCCESS 25[0m in 0.13s]
+[0m16:12:06.203291 [debug] [Thread-1 (]: Finished running node model.inventario_analytics.kpi_margen_bruto
+[0m16:12:06.203733 [debug] [Thread-1 (]: Began running node model.inventario_analytics.kpi_rotacion_inventario
+[0m16:12:06.204376 [info ] [Thread-1 (]: 4 of 5 START sql table model silver_db.kpi_rotacion_inventario ................. [RUN]
+[0m16:12:06.205082 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.inventario_analytics.kpi_margen_bruto, now model.inventario_analytics.kpi_rotacion_inventario)
+[0m16:12:06.205459 [debug] [Thread-1 (]: Began compiling node model.inventario_analytics.kpi_rotacion_inventario
+[0m16:12:06.208419 [debug] [Thread-1 (]: Writing injected SQL for node "model.inventario_analytics.kpi_rotacion_inventario"
+[0m16:12:06.209091 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_rotacion_inventario (compile): 16:12:06.205702 => 16:12:06.208874
+[0m16:12:06.209479 [debug] [Thread-1 (]: Began executing node model.inventario_analytics.kpi_rotacion_inventario
+[0m16:12:06.212730 [debug] [Thread-1 (]: Writing runtime sql for node "model.inventario_analytics.kpi_rotacion_inventario"
+[0m16:12:06.213840 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_rotacion_inventario"
+[0m16:12:06.214394 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_rotacion_inventario: BEGIN
+[0m16:12:06.214770 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:12:06.225813 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:12:06.226438 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_rotacion_inventario"
+[0m16:12:06.226879 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_rotacion_inventario: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_rotacion_inventario"} */
+
+  
+    
+
+  create  table
+    `silver_db`.`kpi_rotacion_inventario__dbt_tmp`
+    
+    
+      as
+    
+    (
+      
+
+WITH ventas_agregadas AS (
+    SELECT 
+        codigo_producto,
+        descripcion,
+        SUM(total) as costo_productos_vendidos,
+        COUNT(*) as num_transacciones
+    FROM `silver_db`.`ventas_limpias`
+    WHERE tipo_transaccion = 'VENTA'
+    GROUP BY codigo_producto, descripcion
+),
+
+inventario_actual AS (
+    SELECT 
+        codigo,
+        descripcion,
+        valor_compra * bod_1 as valor_inventario_actual,
+        bod_1 as stock_actual
+    FROM `silver_db`.`productos_master`
+    WHERE bod_1 > 0
+)
+
+SELECT 
+    v.codigo_producto,
+    v.descripcion,
+    v.costo_productos_vendidos,
+    i.valor_inventario_actual as inventario_promedio,
+    CASE 
+        WHEN i.valor_inventario_actual > 0 
+        THEN ROUND(v.costo_productos_vendidos / i.valor_inventario_actual, 2)
+        ELSE 0 
+    END as rotacion_inventario,
+    CASE 
+        WHEN rotacion_inventario < 2 THEN 'BAJA'
+        WHEN rotacion_inventario BETWEEN 2 AND 6 THEN 'MEDIA'
+        ELSE 'ALTA'
+    END as clasificacion_rotacion,
+    i.stock_actual,
+    v.num_transacciones
+FROM ventas_agregadas v
+LEFT JOIN inventario_actual i ON v.codigo_producto = i.codigo
+WHERE i.codigo IS NOT NULL
+    )
+
+  
+[0m16:12:06.230975 [debug] [Thread-1 (]: mysql adapter: MySQL error: 1054 (42S22): Unknown column 'rotacion_inventario' in 'field list'
+[0m16:12:06.231574 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_rotacion_inventario: ROLLBACK
+[0m16:12:06.232426 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_rotacion_inventario (execute): 16:12:06.209734 => 16:12:06.232181
+[0m16:12:06.232820 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_rotacion_inventario: Close
+[0m16:12:06.235599 [debug] [Thread-1 (]: Database Error in model kpi_rotacion_inventario (models/kpi_rotacion_inventario.sql)
+  1054 (42S22): Unknown column 'rotacion_inventario' in 'field list'
+  compiled Code at target/run/inventario_analytics/models/kpi_rotacion_inventario.sql
+[0m16:12:06.236271 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5941c56e-66a1-4760-bf52-dc03ef05bf3e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea81ae2ed0>]}
+[0m16:12:06.236963 [error] [Thread-1 (]: 4 of 5 ERROR creating sql table model silver_db.kpi_rotacion_inventario ........ [[31mERROR[0m in 0.03s]
+[0m16:12:06.237563 [debug] [Thread-1 (]: Finished running node model.inventario_analytics.kpi_rotacion_inventario
+[0m16:12:06.238731 [debug] [Thread-1 (]: Began running node model.inventario_analytics.dashboard_kpis_criticos
+[0m16:12:06.239126 [info ] [Thread-1 (]: 5 of 5 SKIP relation silver_db.dashboard_kpis_criticos ......................... [[33mSKIP[0m]
+[0m16:12:06.239578 [debug] [Thread-1 (]: Finished running node model.inventario_analytics.dashboard_kpis_criticos
+[0m16:12:06.241078 [debug] [MainThread]: Using mysql connection "master"
+[0m16:12:06.241473 [debug] [MainThread]: On master: BEGIN
+[0m16:12:06.241796 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m16:12:06.252625 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:12:06.253220 [debug] [MainThread]: On master: COMMIT
+[0m16:12:06.253618 [debug] [MainThread]: Using mysql connection "master"
+[0m16:12:06.253934 [debug] [MainThread]: On master: COMMIT
+[0m16:12:06.254558 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:12:06.254895 [debug] [MainThread]: On master: Close
+[0m16:12:06.256857 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:12:06.257425 [debug] [MainThread]: Connection 'model.inventario_analytics.kpi_rotacion_inventario' was properly closed.
+[0m16:12:06.258002 [info ] [MainThread]: 
+[0m16:12:06.258464 [info ] [MainThread]: Finished running 5 table models in 0 hours 0 minutes and 0.52 seconds (0.52s).
+[0m16:12:06.259648 [debug] [MainThread]: Command end result
+[0m16:12:06.264778 [info ] [MainThread]: 
+[0m16:12:06.265300 [info ] [MainThread]: [31mCompleted with 2 errors and 0 warnings:[0m
+[0m16:12:06.265722 [info ] [MainThread]: 
+[0m16:12:06.266076 [error] [MainThread]:   Database Error in model kpi_dias_inventario (models/kpi_dias_inventario.sql)
+  1054 (42S22): Unknown column 'dias_inventario_disponible' in 'field list'
+  compiled Code at target/run/inventario_analytics/models/kpi_dias_inventario.sql
+[0m16:12:06.266474 [info ] [MainThread]: 
+[0m16:12:06.266826 [error] [MainThread]:   Database Error in model kpi_rotacion_inventario (models/kpi_rotacion_inventario.sql)
+  1054 (42S22): Unknown column 'rotacion_inventario' in 'field list'
+  compiled Code at target/run/inventario_analytics/models/kpi_rotacion_inventario.sql
+[0m16:12:06.267196 [info ] [MainThread]: 
+[0m16:12:06.267589 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=2 SKIP=1 TOTAL=5
+[0m16:12:06.268535 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 1.0806924, "process_user_time": 2.142558, "process_kernel_time": 0.139127, "process_mem_max_rss": "137872", "process_in_blocks": "48", "process_out_blocks": "1680", "command_success": false}
+[0m16:12:06.269090 [debug] [MainThread]: Command `dbt run` failed at 16:12:06.268958 after 1.08 seconds
+[0m16:12:06.269515 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea82f84d10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea81aef6b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea80136d80>]}
+[0m16:12:06.269923 [debug] [MainThread]: Flushing usage events
+[0m16:14:57.043348 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f22d57dc2c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f22d57dd4c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f22d57dc9b0>]}
+
+
+============================== 16:14:57.045070 | 06d7fb89-d7ea-4e3d-8946-04bb4418299a ==============================
+[0m16:14:57.045070 [info ] [MainThread]: Running with dbt=1.7.19
+[0m16:14:57.045663 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'log_path': '/home/enzo/universidad/tingdatos/taller_3_v2/gold/logs', 'fail_fast': 'False', 'profiles_dir': '/home/enzo/.dbt', 'introspect': 'True', 'write_json': 'True', 'cache_selected_only': 'False', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'log_cache_events': 'False', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_format': 'default', 'printer_width': '80', 'no_print': 'None', 'indirect_selection': 'eager', 'static_parser': 'True', 'invocation_command': 'dbt run', 'warn_error': 'None', 'quiet': 'False'}
+[0m16:14:57.332574 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '06d7fb89-d7ea-4e3d-8946-04bb4418299a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f22d46a36b0>]}
+[0m16:14:57.470064 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '06d7fb89-d7ea-4e3d-8946-04bb4418299a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f22d4641160>]}
+[0m16:14:57.470880 [info ] [MainThread]: Registered adapter: mysql=1.7.0
+[0m16:14:57.477404 [debug] [MainThread]: checksum: a8d43cdff37d0f32d7fbe4c5c25bea4bb6c86e162f8ce8fdb1a38cdcf7495431, vars: {}, profile: , target: , version: 1.7.19
+[0m16:14:57.506949 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m16:14:57.507662 [debug] [MainThread]: Partial parsing: updated file: inventario_analytics://models/dashboard_kpis_criticos.sql
+[0m16:14:57.650675 [debug] [MainThread]: 1699: static parser successfully parsed dashboard_kpis_criticos.sql
+[0m16:14:57.677296 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.inventario_analytics.silver
+- models.inventario_analytics.gold
+[0m16:14:57.681534 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '06d7fb89-d7ea-4e3d-8946-04bb4418299a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f22d4640980>]}
+[0m16:14:57.687813 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '06d7fb89-d7ea-4e3d-8946-04bb4418299a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f22d45dc830>]}
+[0m16:14:57.688312 [info ] [MainThread]: Found 5 models, 4 sources, 0 exposures, 0 metrics, 375 macros, 0 groups, 0 semantic models
+[0m16:14:57.688690 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '06d7fb89-d7ea-4e3d-8946-04bb4418299a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f22d5983bf0>]}
+[0m16:14:57.690183 [info ] [MainThread]: 
+[0m16:14:57.690883 [debug] [MainThread]: Acquiring new mysql connection 'master'
+[0m16:14:57.692162 [debug] [ThreadPool]: Acquiring new mysql connection 'list_schemas'
+[0m16:14:57.701281 [debug] [ThreadPool]: Using mysql connection "list_schemas"
+[0m16:14:57.701735 [debug] [ThreadPool]: On list_schemas: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "connection_name": "list_schemas"} */
+select distinct schema_name
+        from information_schema.schemata
+[0m16:14:57.702120 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:14:57.718083 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.0 seconds
+[0m16:14:57.719581 [debug] [ThreadPool]: On list_schemas: Close
+[0m16:14:57.722240 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_schemas, now list_None_silver_db)
+[0m16:14:57.726618 [debug] [ThreadPool]: Using mysql connection "list_None_silver_db"
+[0m16:14:57.727024 [debug] [ThreadPool]: On list_None_silver_db: BEGIN
+[0m16:14:57.727323 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:14:57.736772 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:14:57.737265 [debug] [ThreadPool]: Using mysql connection "list_None_silver_db"
+[0m16:14:57.737585 [debug] [ThreadPool]: On list_None_silver_db: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "connection_name": "list_None_silver_db"} */
+select
+      null as "database",
+      table_name as name,
+      table_schema as "schema",
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+    from information_schema.tables
+    where table_schema = 'silver_db'
+  
+[0m16:14:57.739531 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 0.0 seconds
+[0m16:14:57.740653 [debug] [ThreadPool]: On list_None_silver_db: ROLLBACK
+[0m16:14:57.741205 [debug] [ThreadPool]: On list_None_silver_db: Close
+[0m16:14:57.743602 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '06d7fb89-d7ea-4e3d-8946-04bb4418299a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f22d4515340>]}
+[0m16:14:57.744035 [debug] [MainThread]: Using mysql connection "master"
+[0m16:14:57.744347 [debug] [MainThread]: On master: BEGIN
+[0m16:14:57.744634 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:14:57.753697 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:14:57.754098 [debug] [MainThread]: On master: COMMIT
+[0m16:14:57.754412 [debug] [MainThread]: Using mysql connection "master"
+[0m16:14:57.754701 [debug] [MainThread]: On master: COMMIT
+[0m16:14:57.755356 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:14:57.755706 [debug] [MainThread]: On master: Close
+[0m16:14:57.757563 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m16:14:57.757964 [info ] [MainThread]: 
+[0m16:14:57.760579 [debug] [Thread-1 (]: Began running node model.inventario_analytics.kpi_contribucion_utilidad
+[0m16:14:57.761115 [info ] [Thread-1 (]: 1 of 5 START sql table model silver_db.kpi_contribucion_utilidad ............... [RUN]
+[0m16:14:57.761766 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_None_silver_db, now model.inventario_analytics.kpi_contribucion_utilidad)
+[0m16:14:57.762157 [debug] [Thread-1 (]: Began compiling node model.inventario_analytics.kpi_contribucion_utilidad
+[0m16:14:57.769539 [debug] [Thread-1 (]: Writing injected SQL for node "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:14:57.770405 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_contribucion_utilidad (compile): 16:14:57.762439 => 16:14:57.770151
+[0m16:14:57.770838 [debug] [Thread-1 (]: Began executing node model.inventario_analytics.kpi_contribucion_utilidad
+[0m16:14:57.798764 [debug] [Thread-1 (]: Writing runtime sql for node "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:14:57.799547 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:14:57.800035 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: BEGIN
+[0m16:14:57.800596 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:14:57.811238 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:14:57.811677 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:14:57.812065 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_contribucion_utilidad"} */
+
+  
+    
+
+  create  table
+    `silver_db`.`kpi_contribucion_utilidad__dbt_tmp`
+    
+    
+      as
+    
+    (
+      
+
+WITH ventas_con_margen AS (
+    SELECT 
+        v.codigo_producto,
+        v.descripcion,
+        v.precio,
+        v.cantidad,
+        v.total as ingresos,
+        p.valor_compra,
+        (v.precio - p.valor_compra) as margen_unitario,
+        (v.precio - p.valor_compra) * v.cantidad as contribucion_utilidad,
+        EXTRACT(YEAR_MONTH FROM v.fecha) as periodo_mes
+    FROM `silver_db`.`ventas_limpias` v
+    LEFT JOIN `silver_db`.`productos_master` p ON v.codigo_producto = p.codigo
+    WHERE v.tipo_transaccion = 'VENTA' AND p.codigo IS NOT NULL
+)
+
+SELECT 
+    codigo_producto,
+    descripcion,
+    periodo_mes,
+    SUM(cantidad) as unidades_vendidas,
+    SUM(ingresos) as ingresos_totales,
+    AVG(margen_unitario) as margen_unitario_promedio,
+    SUM(contribucion_utilidad) as contribucion_utilidad_total,
+    ROUND(SUM(contribucion_utilidad) / SUM(SUM(contribucion_utilidad)) OVER() * 100, 2) as pct_contribucion_total
+FROM ventas_con_margen
+GROUP BY codigo_producto, descripcion, periodo_mes
+ORDER BY contribucion_utilidad_total DESC
+    )
+
+  
+[0m16:14:57.873697 [debug] [Thread-1 (]: SQL status: SUCCESS 213 in 0.0 seconds
+[0m16:14:57.879732 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:14:57.880159 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_contribucion_utilidad"} */
+
+    drop table if exists `silver_db`.`kpi_contribucion_utilidad__dbt_backup` cascade
+  
+[0m16:14:57.883969 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:14:57.884902 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:14:57.885284 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_contribucion_utilidad"} */
+
+    rename table `silver_db`.`kpi_contribucion_utilidad` to `silver_db`.`kpi_contribucion_utilidad__dbt_backup`
+  
+[0m16:14:57.916353 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:14:57.919232 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:14:57.919675 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_contribucion_utilidad"} */
+
+    drop table if exists `silver_db`.`kpi_contribucion_utilidad` cascade
+  
+[0m16:14:57.923487 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:14:57.924460 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:14:57.924828 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_contribucion_utilidad"} */
+
+    rename table `silver_db`.`kpi_contribucion_utilidad__dbt_tmp` to `silver_db`.`kpi_contribucion_utilidad`
+  
+[0m16:14:57.950844 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:14:57.968372 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: COMMIT
+[0m16:14:57.968866 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:14:57.969236 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: COMMIT
+[0m16:14:57.970318 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:14:57.974430 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:14:57.974918 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_contribucion_utilidad"} */
+drop table if exists `silver_db`.`kpi_contribucion_utilidad__dbt_backup`
+[0m16:14:57.999925 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:14:58.001622 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_contribucion_utilidad (execute): 16:14:57.771101 => 16:14:58.001384
+[0m16:14:58.002034 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: Close
+[0m16:14:58.003664 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '06d7fb89-d7ea-4e3d-8946-04bb4418299a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f22d26de120>]}
+[0m16:14:58.004304 [info ] [Thread-1 (]: 1 of 5 OK created sql table model silver_db.kpi_contribucion_utilidad .......... [[32mSUCCESS 213[0m in 0.24s]
+[0m16:14:58.004944 [debug] [Thread-1 (]: Finished running node model.inventario_analytics.kpi_contribucion_utilidad
+[0m16:14:58.005416 [debug] [Thread-1 (]: Began running node model.inventario_analytics.kpi_dias_inventario
+[0m16:14:58.005908 [info ] [Thread-1 (]: 2 of 5 START sql table model silver_db.kpi_dias_inventario ..................... [RUN]
+[0m16:14:58.006747 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.inventario_analytics.kpi_contribucion_utilidad, now model.inventario_analytics.kpi_dias_inventario)
+[0m16:14:58.007132 [debug] [Thread-1 (]: Began compiling node model.inventario_analytics.kpi_dias_inventario
+[0m16:14:58.009923 [debug] [Thread-1 (]: Writing injected SQL for node "model.inventario_analytics.kpi_dias_inventario"
+[0m16:14:58.010638 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_dias_inventario (compile): 16:14:58.007384 => 16:14:58.010374
+[0m16:14:58.011022 [debug] [Thread-1 (]: Began executing node model.inventario_analytics.kpi_dias_inventario
+[0m16:14:58.014524 [debug] [Thread-1 (]: Writing runtime sql for node "model.inventario_analytics.kpi_dias_inventario"
+[0m16:14:58.015304 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_dias_inventario"
+[0m16:14:58.015742 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_dias_inventario: BEGIN
+[0m16:14:58.016119 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:14:58.027576 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:14:58.028117 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_dias_inventario"
+[0m16:14:58.028567 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_dias_inventario: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_dias_inventario"} */
+
+  
+    
+
+  create  table
+    `silver_db`.`kpi_dias_inventario__dbt_tmp`
+    
+    
+      as
+    
+    (
+      
+
+WITH ventas_diarias AS (
+    SELECT 
+        codigo_producto,
+        descripcion,
+        DATE(fecha) as fecha_venta,
+        SUM(cantidad) as cantidad_vendida_dia
+    FROM `silver_db`.`ventas_limpias`
+    WHERE tipo_transaccion = 'VENTA'
+    GROUP BY codigo_producto, descripcion, DATE(fecha)
+),
+
+promedio_ventas AS (
+    SELECT 
+        codigo_producto,
+        descripcion,
+        AVG(cantidad_vendida_dia) as venta_promedio_diaria,
+        COUNT(DISTINCT fecha_venta) as dias_con_ventas
+    FROM ventas_diarias
+    GROUP BY codigo_producto, descripcion
+)
+
+SELECT 
+    p.codigo as codigo_producto,
+    p.descripcion,
+    p.bod_1 as stock_actual,
+    COALESCE(v.venta_promedio_diaria, 0) as venta_promedio_diaria,
+    v.dias_con_ventas,
+    CASE 
+        WHEN v.venta_promedio_diaria > 0 
+        THEN ROUND(p.bod_1 / v.venta_promedio_diaria, 0)
+        ELSE 999 
+    END as dias_inventario_disponible,
+    CASE 
+        WHEN dias_inventario_disponible > 90 THEN 'EXCESO'
+        WHEN dias_inventario_disponible BETWEEN 30 AND 90 THEN 'NORMAL'
+        WHEN dias_inventario_disponible BETWEEN 7 AND 29 THEN 'BAJO'
+        WHEN dias_inventario_disponible < 7 THEN 'CRITICO'
+        ELSE 'SIN_VENTAS'
+    END as alerta_stock
+FROM `silver_db`.`productos_master` p
+LEFT JOIN promedio_ventas v ON p.codigo = v.codigo_producto
+WHERE p.bod_1 > 0
+ORDER BY dias_inventario_disponible ASC
+    )
+
+  
+[0m16:14:58.030417 [debug] [Thread-1 (]: mysql adapter: MySQL error: 1054 (42S22): Unknown column 'dias_inventario_disponible' in 'field list'
+[0m16:14:58.030824 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_dias_inventario: ROLLBACK
+[0m16:14:58.031616 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_dias_inventario (execute): 16:14:58.011256 => 16:14:58.031373
+[0m16:14:58.032002 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_dias_inventario: Close
+[0m16:14:58.036458 [debug] [Thread-1 (]: Database Error in model kpi_dias_inventario (models/kpi_dias_inventario.sql)
+  1054 (42S22): Unknown column 'dias_inventario_disponible' in 'field list'
+  compiled Code at target/run/inventario_analytics/models/kpi_dias_inventario.sql
+[0m16:14:58.036968 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '06d7fb89-d7ea-4e3d-8946-04bb4418299a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f22d2664320>]}
+[0m16:14:58.037623 [error] [Thread-1 (]: 2 of 5 ERROR creating sql table model silver_db.kpi_dias_inventario ............ [[31mERROR[0m in 0.03s]
+[0m16:14:58.038215 [debug] [Thread-1 (]: Finished running node model.inventario_analytics.kpi_dias_inventario
+[0m16:14:58.038781 [debug] [Thread-1 (]: Began running node model.inventario_analytics.kpi_margen_bruto
+[0m16:14:58.040090 [info ] [Thread-1 (]: 3 of 5 START sql table model silver_db.kpi_margen_bruto ........................ [RUN]
+[0m16:14:58.040831 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.inventario_analytics.kpi_dias_inventario, now model.inventario_analytics.kpi_margen_bruto)
+[0m16:14:58.041261 [debug] [Thread-1 (]: Began compiling node model.inventario_analytics.kpi_margen_bruto
+[0m16:14:58.044224 [debug] [Thread-1 (]: Writing injected SQL for node "model.inventario_analytics.kpi_margen_bruto"
+[0m16:14:58.044863 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_margen_bruto (compile): 16:14:58.041499 => 16:14:58.044650
+[0m16:14:58.045221 [debug] [Thread-1 (]: Began executing node model.inventario_analytics.kpi_margen_bruto
+[0m16:14:58.048348 [debug] [Thread-1 (]: Writing runtime sql for node "model.inventario_analytics.kpi_margen_bruto"
+[0m16:14:58.049019 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_margen_bruto"
+[0m16:14:58.049400 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: BEGIN
+[0m16:14:58.049738 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:14:58.060771 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:14:58.061305 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_margen_bruto"
+[0m16:14:58.061723 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_margen_bruto"} */
+
+  
+    
+
+  create  table
+    `silver_db`.`kpi_margen_bruto__dbt_tmp`
+    
+    
+      as
+    
+    (
+      
+
+WITH productos_con_precios AS (
+    SELECT 
+        codigo,
+        descripcion,
+        valor_compra,
+        lista_1 as precio_venta,
+        CASE 
+            WHEN lista_1 > 0 
+            THEN ROUND(((lista_1 - valor_compra) / lista_1) * 100, 2)
+            ELSE 0 
+        END as margen_bruto_pct,
+        lista_1 - valor_compra as margen_bruto_absoluto
+    FROM `silver_db`.`productos_master`
+    WHERE lista_1 > 0 AND valor_compra > 0
+)
+
+SELECT 
+    codigo,
+    descripcion,
+    valor_compra,
+    precio_venta,
+    margen_bruto_pct,
+    margen_bruto_absoluto,
+    CASE 
+        WHEN margen_bruto_pct < 20 THEN 'BAJO'
+        WHEN margen_bruto_pct BETWEEN 20 AND 40 THEN 'MEDIO'
+        ELSE 'ALTO'
+    END as clasificacion_margen
+FROM productos_con_precios
+ORDER BY margen_bruto_pct DESC
+    )
+
+  
+[0m16:14:58.107218 [debug] [Thread-1 (]: SQL status: SUCCESS 25 in 0.0 seconds
+[0m16:14:58.110573 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_margen_bruto"
+[0m16:14:58.111003 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_margen_bruto"} */
+
+    drop table if exists `silver_db`.`kpi_margen_bruto__dbt_backup` cascade
+  
+[0m16:14:58.114929 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:14:58.115932 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_margen_bruto"
+[0m16:14:58.116316 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_margen_bruto"} */
+
+    rename table `silver_db`.`kpi_margen_bruto` to `silver_db`.`kpi_margen_bruto__dbt_backup`
+  
+[0m16:14:58.145972 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:14:58.150065 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_margen_bruto"
+[0m16:14:58.150489 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_margen_bruto"} */
+
+    drop table if exists `silver_db`.`kpi_margen_bruto` cascade
+  
+[0m16:14:58.156851 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:14:58.157796 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_margen_bruto"
+[0m16:14:58.158176 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_margen_bruto"} */
+
+    rename table `silver_db`.`kpi_margen_bruto__dbt_tmp` to `silver_db`.`kpi_margen_bruto`
+  
+[0m16:14:58.186440 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:14:58.188663 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: COMMIT
+[0m16:14:58.189104 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_margen_bruto"
+[0m16:14:58.189461 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: COMMIT
+[0m16:14:58.190242 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:14:58.192482 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_margen_bruto"
+[0m16:14:58.192861 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_margen_bruto"} */
+drop table if exists `silver_db`.`kpi_margen_bruto__dbt_backup`
+[0m16:14:58.215846 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:14:58.217527 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_margen_bruto (execute): 16:14:58.045459 => 16:14:58.217292
+[0m16:14:58.217923 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: Close
+[0m16:14:58.219395 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '06d7fb89-d7ea-4e3d-8946-04bb4418299a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f22d05b64e0>]}
+[0m16:14:58.220050 [info ] [Thread-1 (]: 3 of 5 OK created sql table model silver_db.kpi_margen_bruto ................... [[32mSUCCESS 25[0m in 0.18s]
+[0m16:14:58.220637 [debug] [Thread-1 (]: Finished running node model.inventario_analytics.kpi_margen_bruto
+[0m16:14:58.221104 [debug] [Thread-1 (]: Began running node model.inventario_analytics.kpi_rotacion_inventario
+[0m16:14:58.221667 [info ] [Thread-1 (]: 4 of 5 START sql table model silver_db.kpi_rotacion_inventario ................. [RUN]
+[0m16:14:58.222265 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.inventario_analytics.kpi_margen_bruto, now model.inventario_analytics.kpi_rotacion_inventario)
+[0m16:14:58.222619 [debug] [Thread-1 (]: Began compiling node model.inventario_analytics.kpi_rotacion_inventario
+[0m16:14:58.225352 [debug] [Thread-1 (]: Writing injected SQL for node "model.inventario_analytics.kpi_rotacion_inventario"
+[0m16:14:58.225965 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_rotacion_inventario (compile): 16:14:58.222854 => 16:14:58.225759
+[0m16:14:58.226324 [debug] [Thread-1 (]: Began executing node model.inventario_analytics.kpi_rotacion_inventario
+[0m16:14:58.229362 [debug] [Thread-1 (]: Writing runtime sql for node "model.inventario_analytics.kpi_rotacion_inventario"
+[0m16:14:58.230009 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_rotacion_inventario"
+[0m16:14:58.230411 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_rotacion_inventario: BEGIN
+[0m16:14:58.230744 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:14:58.241031 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:14:58.241599 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_rotacion_inventario"
+[0m16:14:58.242010 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_rotacion_inventario: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_rotacion_inventario"} */
+
+  
+    
+
+  create  table
+    `silver_db`.`kpi_rotacion_inventario__dbt_tmp`
+    
+    
+      as
+    
+    (
+      
+
+WITH ventas_agregadas AS (
+    SELECT 
+        codigo_producto,
+        descripcion,
+        SUM(total) as costo_productos_vendidos,
+        COUNT(*) as num_transacciones
+    FROM `silver_db`.`ventas_limpias`
+    WHERE tipo_transaccion = 'VENTA'
+    GROUP BY codigo_producto, descripcion
+),
+
+inventario_actual AS (
+    SELECT 
+        codigo,
+        descripcion,
+        valor_compra * bod_1 as valor_inventario_actual,
+        bod_1 as stock_actual
+    FROM `silver_db`.`productos_master`
+    WHERE bod_1 > 0
+)
+
+SELECT 
+    v.codigo_producto,
+    v.descripcion,
+    v.costo_productos_vendidos,
+    i.valor_inventario_actual as inventario_promedio,
+    CASE 
+        WHEN i.valor_inventario_actual > 0 
+        THEN ROUND(v.costo_productos_vendidos / i.valor_inventario_actual, 2)
+        ELSE 0 
+    END as rotacion_inventario,
+    CASE 
+        WHEN rotacion_inventario < 2 THEN 'BAJA'
+        WHEN rotacion_inventario BETWEEN 2 AND 6 THEN 'MEDIA'
+        ELSE 'ALTA'
+    END as clasificacion_rotacion,
+    i.stock_actual,
+    v.num_transacciones
+FROM ventas_agregadas v
+LEFT JOIN inventario_actual i ON v.codigo_producto = i.codigo
+WHERE i.codigo IS NOT NULL
+    )
+
+  
+[0m16:14:58.243797 [debug] [Thread-1 (]: mysql adapter: MySQL error: 1054 (42S22): Unknown column 'rotacion_inventario' in 'field list'
+[0m16:14:58.244238 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_rotacion_inventario: ROLLBACK
+[0m16:14:58.245071 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_rotacion_inventario (execute): 16:14:58.226554 => 16:14:58.244824
+[0m16:14:58.245557 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_rotacion_inventario: Close
+[0m16:14:58.248383 [debug] [Thread-1 (]: Database Error in model kpi_rotacion_inventario (models/kpi_rotacion_inventario.sql)
+  1054 (42S22): Unknown column 'rotacion_inventario' in 'field list'
+  compiled Code at target/run/inventario_analytics/models/kpi_rotacion_inventario.sql
+[0m16:14:58.248854 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '06d7fb89-d7ea-4e3d-8946-04bb4418299a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f22d26dcf80>]}
+[0m16:14:58.249422 [error] [Thread-1 (]: 4 of 5 ERROR creating sql table model silver_db.kpi_rotacion_inventario ........ [[31mERROR[0m in 0.03s]
+[0m16:14:58.249992 [debug] [Thread-1 (]: Finished running node model.inventario_analytics.kpi_rotacion_inventario
+[0m16:14:58.251191 [debug] [Thread-1 (]: Began running node model.inventario_analytics.dashboard_kpis_criticos
+[0m16:14:58.251663 [info ] [Thread-1 (]: 5 of 5 SKIP relation silver_db.dashboard_kpis_criticos ......................... [[33mSKIP[0m]
+[0m16:14:58.252189 [debug] [Thread-1 (]: Finished running node model.inventario_analytics.dashboard_kpis_criticos
+[0m16:14:58.253833 [debug] [MainThread]: Using mysql connection "master"
+[0m16:14:58.254236 [debug] [MainThread]: On master: BEGIN
+[0m16:14:58.254557 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m16:14:58.264610 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:14:58.265063 [debug] [MainThread]: On master: COMMIT
+[0m16:14:58.265415 [debug] [MainThread]: Using mysql connection "master"
+[0m16:14:58.265732 [debug] [MainThread]: On master: COMMIT
+[0m16:14:58.266307 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:14:58.266723 [debug] [MainThread]: On master: Close
+[0m16:14:58.269079 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:14:58.269432 [debug] [MainThread]: Connection 'model.inventario_analytics.kpi_rotacion_inventario' was properly closed.
+[0m16:14:58.269832 [info ] [MainThread]: 
+[0m16:14:58.270215 [info ] [MainThread]: Finished running 5 table models in 0 hours 0 minutes and 0.58 seconds (0.58s).
+[0m16:14:58.271184 [debug] [MainThread]: Command end result
+[0m16:14:58.276589 [info ] [MainThread]: 
+[0m16:14:58.277070 [info ] [MainThread]: [31mCompleted with 2 errors and 0 warnings:[0m
+[0m16:14:58.277432 [info ] [MainThread]: 
+[0m16:14:58.277769 [error] [MainThread]:   Database Error in model kpi_dias_inventario (models/kpi_dias_inventario.sql)
+  1054 (42S22): Unknown column 'dias_inventario_disponible' in 'field list'
+  compiled Code at target/run/inventario_analytics/models/kpi_dias_inventario.sql
+[0m16:14:58.278111 [info ] [MainThread]: 
+[0m16:14:58.278425 [error] [MainThread]:   Database Error in model kpi_rotacion_inventario (models/kpi_rotacion_inventario.sql)
+  1054 (42S22): Unknown column 'rotacion_inventario' in 'field list'
+  compiled Code at target/run/inventario_analytics/models/kpi_rotacion_inventario.sql
+[0m16:14:58.278761 [info ] [MainThread]: 
+[0m16:14:58.279112 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=2 SKIP=1 TOTAL=5
+[0m16:14:58.280048 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 1.2834063, "process_user_time": 2.197067, "process_kernel_time": 0.167572, "process_mem_max_rss": "140036", "process_out_blocks": "2408", "command_success": false, "process_in_blocks": "0"}
+[0m16:14:58.280555 [debug] [MainThread]: Command `dbt run` failed at 16:14:58.280433 after 1.28 seconds
+[0m16:14:58.280961 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f22d59a8170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f22d053ce30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f22d05bfec0>]}
+[0m16:14:58.281353 [debug] [MainThread]: Flushing usage events
+[0m16:17:49.122607 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2c98a9820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2ca04fb00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2c98aa330>]}
+
+
+============================== 16:17:49.124451 | e71d5f46-7050-4da3-95f4-1f4146d4c66c ==============================
+[0m16:17:49.124451 [info ] [MainThread]: Running with dbt=1.7.19
+[0m16:17:49.125134 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'static_parser': 'True', 'printer_width': '80', 'profiles_dir': '/home/enzo/.dbt', 'invocation_command': 'dbt run', 'use_colors': 'True', 'introspect': 'True', 'use_experimental_parser': 'False', 'version_check': 'True', 'target_path': 'None', 'debug': 'False', 'quiet': 'False', 'partial_parse': 'True', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'log_path': '/home/enzo/universidad/tingdatos/taller_3_v2/gold/logs', 'warn_error': 'None', 'indirect_selection': 'eager', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'fail_fast': 'False', 'write_json': 'True'}
+[0m16:17:49.401552 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e71d5f46-7050-4da3-95f4-1f4146d4c66c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2c8852210>]}
+[0m16:17:49.535097 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e71d5f46-7050-4da3-95f4-1f4146d4c66c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2c87e8740>]}
+[0m16:17:49.535877 [info ] [MainThread]: Registered adapter: mysql=1.7.0
+[0m16:17:49.542151 [debug] [MainThread]: checksum: a8d43cdff37d0f32d7fbe4c5c25bea4bb6c86e162f8ce8fdb1a38cdcf7495431, vars: {}, profile: , target: , version: 1.7.19
+[0m16:17:49.571742 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 3 files changed.
+[0m16:17:49.572374 [debug] [MainThread]: Partial parsing: updated file: inventario_analytics://models/kpi_dias_inventario.sql
+[0m16:17:49.572802 [debug] [MainThread]: Partial parsing: updated file: inventario_analytics://models/kpi_rotacion_inventario.sql
+[0m16:17:49.573216 [debug] [MainThread]: Partial parsing: updated file: inventario_analytics://models/dashboard_kpis_criticos.sql
+[0m16:17:49.709831 [debug] [MainThread]: 1699: static parser successfully parsed kpi_dias_inventario.sql
+[0m16:17:49.726076 [debug] [MainThread]: 1699: static parser successfully parsed kpi_rotacion_inventario.sql
+[0m16:17:49.729408 [debug] [MainThread]: 1699: static parser successfully parsed dashboard_kpis_criticos.sql
+[0m16:17:49.744294 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.inventario_analytics.gold
+- models.inventario_analytics.silver
+[0m16:17:49.748457 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e71d5f46-7050-4da3-95f4-1f4146d4c66c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2c8326bd0>]}
+[0m16:17:49.754905 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e71d5f46-7050-4da3-95f4-1f4146d4c66c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2c84f0e60>]}
+[0m16:17:49.755468 [info ] [MainThread]: Found 5 models, 4 sources, 0 exposures, 0 metrics, 375 macros, 0 groups, 0 semantic models
+[0m16:17:49.755880 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e71d5f46-7050-4da3-95f4-1f4146d4c66c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2c84f0290>]}
+[0m16:17:49.757497 [info ] [MainThread]: 
+[0m16:17:49.758250 [debug] [MainThread]: Acquiring new mysql connection 'master'
+[0m16:17:49.759633 [debug] [ThreadPool]: Acquiring new mysql connection 'list_schemas'
+[0m16:17:49.768171 [debug] [ThreadPool]: Using mysql connection "list_schemas"
+[0m16:17:49.768658 [debug] [ThreadPool]: On list_schemas: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "connection_name": "list_schemas"} */
+select distinct schema_name
+        from information_schema.schemata
+[0m16:17:49.768991 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:17:49.784324 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.0 seconds
+[0m16:17:49.785788 [debug] [ThreadPool]: On list_schemas: Close
+[0m16:17:49.788404 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_schemas, now list_None_silver_db)
+[0m16:17:49.792517 [debug] [ThreadPool]: Using mysql connection "list_None_silver_db"
+[0m16:17:49.792926 [debug] [ThreadPool]: On list_None_silver_db: BEGIN
+[0m16:17:49.793266 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:17:49.802216 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:49.802559 [debug] [ThreadPool]: Using mysql connection "list_None_silver_db"
+[0m16:17:49.802873 [debug] [ThreadPool]: On list_None_silver_db: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "connection_name": "list_None_silver_db"} */
+select
+      null as "database",
+      table_name as name,
+      table_schema as "schema",
+      case when table_type = 'BASE TABLE' then 'table'
+           when table_type = 'VIEW' then 'view'
+           else table_type
+      end as table_type
+    from information_schema.tables
+    where table_schema = 'silver_db'
+  
+[0m16:17:49.804448 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 0.0 seconds
+[0m16:17:49.805549 [debug] [ThreadPool]: On list_None_silver_db: ROLLBACK
+[0m16:17:49.806066 [debug] [ThreadPool]: On list_None_silver_db: Close
+[0m16:17:49.808797 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e71d5f46-7050-4da3-95f4-1f4146d4c66c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2c82f4710>]}
+[0m16:17:49.809441 [debug] [MainThread]: Using mysql connection "master"
+[0m16:17:49.809763 [debug] [MainThread]: On master: BEGIN
+[0m16:17:49.810056 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:17:49.819854 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:49.820343 [debug] [MainThread]: On master: COMMIT
+[0m16:17:49.820665 [debug] [MainThread]: Using mysql connection "master"
+[0m16:17:49.820960 [debug] [MainThread]: On master: COMMIT
+[0m16:17:49.821579 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:49.822076 [debug] [MainThread]: On master: Close
+[0m16:17:49.823822 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m16:17:49.824213 [info ] [MainThread]: 
+[0m16:17:49.827049 [debug] [Thread-1 (]: Began running node model.inventario_analytics.kpi_contribucion_utilidad
+[0m16:17:49.827554 [info ] [Thread-1 (]: 1 of 5 START sql table model silver_db.kpi_contribucion_utilidad ............... [RUN]
+[0m16:17:49.828227 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_None_silver_db, now model.inventario_analytics.kpi_contribucion_utilidad)
+[0m16:17:49.828584 [debug] [Thread-1 (]: Began compiling node model.inventario_analytics.kpi_contribucion_utilidad
+[0m16:17:49.835812 [debug] [Thread-1 (]: Writing injected SQL for node "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:17:49.836622 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_contribucion_utilidad (compile): 16:17:49.828812 => 16:17:49.836300
+[0m16:17:49.837099 [debug] [Thread-1 (]: Began executing node model.inventario_analytics.kpi_contribucion_utilidad
+[0m16:17:49.864053 [debug] [Thread-1 (]: Writing runtime sql for node "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:17:49.864843 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:17:49.865308 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: BEGIN
+[0m16:17:49.865646 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:17:49.875237 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:49.875665 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:17:49.876032 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_contribucion_utilidad"} */
+
+  
+    
+
+  create  table
+    `silver_db`.`kpi_contribucion_utilidad__dbt_tmp`
+    
+    
+      as
+    
+    (
+      
+
+WITH ventas_con_margen AS (
+    SELECT 
+        v.codigo_producto,
+        v.descripcion,
+        v.precio,
+        v.cantidad,
+        v.total as ingresos,
+        p.valor_compra,
+        (v.precio - p.valor_compra) as margen_unitario,
+        (v.precio - p.valor_compra) * v.cantidad as contribucion_utilidad,
+        EXTRACT(YEAR_MONTH FROM v.fecha) as periodo_mes
+    FROM `silver_db`.`ventas_limpias` v
+    LEFT JOIN `silver_db`.`productos_master` p ON v.codigo_producto = p.codigo
+    WHERE v.tipo_transaccion = 'VENTA' AND p.codigo IS NOT NULL
+)
+
+SELECT 
+    codigo_producto,
+    descripcion,
+    periodo_mes,
+    SUM(cantidad) as unidades_vendidas,
+    SUM(ingresos) as ingresos_totales,
+    AVG(margen_unitario) as margen_unitario_promedio,
+    SUM(contribucion_utilidad) as contribucion_utilidad_total,
+    ROUND(SUM(contribucion_utilidad) / SUM(SUM(contribucion_utilidad)) OVER() * 100, 2) as pct_contribucion_total
+FROM ventas_con_margen
+GROUP BY codigo_producto, descripcion, periodo_mes
+ORDER BY contribucion_utilidad_total DESC
+    )
+
+  
+[0m16:17:49.935433 [debug] [Thread-1 (]: SQL status: SUCCESS 213 in 0.0 seconds
+[0m16:17:49.941605 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:17:49.942071 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_contribucion_utilidad"} */
+
+    drop table if exists `silver_db`.`kpi_contribucion_utilidad__dbt_backup` cascade
+  
+[0m16:17:49.946306 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:49.947291 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:17:49.947664 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_contribucion_utilidad"} */
+
+    rename table `silver_db`.`kpi_contribucion_utilidad` to `silver_db`.`kpi_contribucion_utilidad__dbt_backup`
+  
+[0m16:17:49.972944 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:49.976007 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:17:49.976419 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_contribucion_utilidad"} */
+
+    drop table if exists `silver_db`.`kpi_contribucion_utilidad` cascade
+  
+[0m16:17:49.980286 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:49.981273 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:17:49.981651 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_contribucion_utilidad"} */
+
+    rename table `silver_db`.`kpi_contribucion_utilidad__dbt_tmp` to `silver_db`.`kpi_contribucion_utilidad`
+  
+[0m16:17:50.010737 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.027867 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: COMMIT
+[0m16:17:50.028368 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:17:50.028754 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: COMMIT
+[0m16:17:50.029769 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.034459 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_contribucion_utilidad"
+[0m16:17:50.034879 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_contribucion_utilidad"} */
+drop table if exists `silver_db`.`kpi_contribucion_utilidad__dbt_backup`
+[0m16:17:50.063387 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.065057 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_contribucion_utilidad (execute): 16:17:49.837399 => 16:17:50.064817
+[0m16:17:50.065478 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_contribucion_utilidad: Close
+[0m16:17:50.066917 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e71d5f46-7050-4da3-95f4-1f4146d4c66c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2c61df8f0>]}
+[0m16:17:50.067551 [info ] [Thread-1 (]: 1 of 5 OK created sql table model silver_db.kpi_contribucion_utilidad .......... [[32mSUCCESS 213[0m in 0.24s]
+[0m16:17:50.068165 [debug] [Thread-1 (]: Finished running node model.inventario_analytics.kpi_contribucion_utilidad
+[0m16:17:50.068629 [debug] [Thread-1 (]: Began running node model.inventario_analytics.kpi_dias_inventario
+[0m16:17:50.069101 [info ] [Thread-1 (]: 2 of 5 START sql table model silver_db.kpi_dias_inventario ..................... [RUN]
+[0m16:17:50.069985 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.inventario_analytics.kpi_contribucion_utilidad, now model.inventario_analytics.kpi_dias_inventario)
+[0m16:17:50.070400 [debug] [Thread-1 (]: Began compiling node model.inventario_analytics.kpi_dias_inventario
+[0m16:17:50.073386 [debug] [Thread-1 (]: Writing injected SQL for node "model.inventario_analytics.kpi_dias_inventario"
+[0m16:17:50.074074 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_dias_inventario (compile): 16:17:50.070662 => 16:17:50.073838
+[0m16:17:50.074458 [debug] [Thread-1 (]: Began executing node model.inventario_analytics.kpi_dias_inventario
+[0m16:17:50.077643 [debug] [Thread-1 (]: Writing runtime sql for node "model.inventario_analytics.kpi_dias_inventario"
+[0m16:17:50.078332 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_dias_inventario"
+[0m16:17:50.078713 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_dias_inventario: BEGIN
+[0m16:17:50.079063 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:17:50.089135 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.089682 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_dias_inventario"
+[0m16:17:50.090113 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_dias_inventario: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_dias_inventario"} */
+
+  
+    
+
+  create  table
+    `silver_db`.`kpi_dias_inventario__dbt_tmp`
+    
+    
+      as
+    
+    (
+      
+
+WITH ventas_diarias AS (
+    SELECT
+        codigo_producto,
+        descripcion,
+        DATE(fecha) as fecha_venta,
+        SUM(cantidad) as cantidad_vendida_dia
+    FROM `silver_db`.`ventas_limpias`
+    WHERE tipo_transaccion = 'VENTA'
+    GROUP BY codigo_producto, descripcion, DATE(fecha)
+),
+promedio_ventas AS (
+    SELECT
+        codigo_producto,
+        descripcion,
+        AVG(cantidad_vendida_dia) as venta_promedio_diaria,
+        COUNT(DISTINCT fecha_venta) as dias_con_ventas
+    FROM ventas_diarias
+    GROUP BY codigo_producto, descripcion
+),
+calculo_dias AS (
+    SELECT
+        p.codigo as codigo_producto,
+        p.descripcion,
+        p.bod_1 as stock_actual,
+        COALESCE(v.venta_promedio_diaria, 0) as venta_promedio_diaria,
+        v.dias_con_ventas,
+        CASE
+            WHEN v.venta_promedio_diaria > 0
+            THEN ROUND(p.bod_1 / v.venta_promedio_diaria, 0)
+            ELSE 999
+        END as dias_inventario_disponible
+    FROM `silver_db`.`productos_master` p
+    LEFT JOIN promedio_ventas v ON p.codigo = v.codigo_producto
+    WHERE p.bod_1 > 0
+)
+SELECT
+    codigo_producto,
+    descripcion,
+    stock_actual,
+    venta_promedio_diaria,
+    dias_con_ventas,
+    dias_inventario_disponible,
+    CASE
+        WHEN dias_inventario_disponible > 90 THEN 'EXCESO'
+        WHEN dias_inventario_disponible BETWEEN 30 AND 90 THEN 'NORMAL'
+        WHEN dias_inventario_disponible BETWEEN 7 AND 29 THEN 'BAJO'
+        WHEN dias_inventario_disponible < 7 THEN 'CRITICO'
+        ELSE 'SIN_VENTAS'
+    END as alerta_stock
+FROM calculo_dias
+ORDER BY dias_inventario_disponible ASC
+    )
+
+  
+[0m16:17:50.142123 [debug] [Thread-1 (]: SQL status: SUCCESS 25 in 0.0 seconds
+[0m16:17:50.145383 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_dias_inventario"
+[0m16:17:50.145887 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_dias_inventario: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_dias_inventario"} */
+
+    drop table if exists `silver_db`.`kpi_dias_inventario` cascade
+  
+[0m16:17:50.150006 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.151052 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_dias_inventario"
+[0m16:17:50.151426 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_dias_inventario: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_dias_inventario"} */
+
+    rename table `silver_db`.`kpi_dias_inventario__dbt_tmp` to `silver_db`.`kpi_dias_inventario`
+  
+[0m16:17:50.176950 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.179273 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_dias_inventario: COMMIT
+[0m16:17:50.180170 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_dias_inventario"
+[0m16:17:50.180746 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_dias_inventario: COMMIT
+[0m16:17:50.181600 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.184540 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_dias_inventario"
+[0m16:17:50.184950 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_dias_inventario: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_dias_inventario"} */
+drop table if exists `silver_db`.`kpi_dias_inventario__dbt_backup`
+[0m16:17:50.189166 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.190924 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_dias_inventario (execute): 16:17:50.074695 => 16:17:50.190601
+[0m16:17:50.191407 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_dias_inventario: Close
+[0m16:17:50.192958 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e71d5f46-7050-4da3-95f4-1f4146d4c66c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2c6227f20>]}
+[0m16:17:50.193579 [info ] [Thread-1 (]: 2 of 5 OK created sql table model silver_db.kpi_dias_inventario ................ [[32mSUCCESS 25[0m in 0.12s]
+[0m16:17:50.194217 [debug] [Thread-1 (]: Finished running node model.inventario_analytics.kpi_dias_inventario
+[0m16:17:50.194684 [debug] [Thread-1 (]: Began running node model.inventario_analytics.kpi_margen_bruto
+[0m16:17:50.195288 [info ] [Thread-1 (]: 3 of 5 START sql table model silver_db.kpi_margen_bruto ........................ [RUN]
+[0m16:17:50.196038 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.inventario_analytics.kpi_dias_inventario, now model.inventario_analytics.kpi_margen_bruto)
+[0m16:17:50.196464 [debug] [Thread-1 (]: Began compiling node model.inventario_analytics.kpi_margen_bruto
+[0m16:17:50.199362 [debug] [Thread-1 (]: Writing injected SQL for node "model.inventario_analytics.kpi_margen_bruto"
+[0m16:17:50.200083 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_margen_bruto (compile): 16:17:50.196716 => 16:17:50.199864
+[0m16:17:50.200447 [debug] [Thread-1 (]: Began executing node model.inventario_analytics.kpi_margen_bruto
+[0m16:17:50.205050 [debug] [Thread-1 (]: Writing runtime sql for node "model.inventario_analytics.kpi_margen_bruto"
+[0m16:17:50.205784 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_margen_bruto"
+[0m16:17:50.206151 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: BEGIN
+[0m16:17:50.206503 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:17:50.216398 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.217041 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_margen_bruto"
+[0m16:17:50.217494 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_margen_bruto"} */
+
+  
+    
+
+  create  table
+    `silver_db`.`kpi_margen_bruto__dbt_tmp`
+    
+    
+      as
+    
+    (
+      
+
+WITH productos_con_precios AS (
+    SELECT 
+        codigo,
+        descripcion,
+        valor_compra,
+        lista_1 as precio_venta,
+        CASE 
+            WHEN lista_1 > 0 
+            THEN ROUND(((lista_1 - valor_compra) / lista_1) * 100, 2)
+            ELSE 0 
+        END as margen_bruto_pct,
+        lista_1 - valor_compra as margen_bruto_absoluto
+    FROM `silver_db`.`productos_master`
+    WHERE lista_1 > 0 AND valor_compra > 0
+)
+
+SELECT 
+    codigo,
+    descripcion,
+    valor_compra,
+    precio_venta,
+    margen_bruto_pct,
+    margen_bruto_absoluto,
+    CASE 
+        WHEN margen_bruto_pct < 20 THEN 'BAJO'
+        WHEN margen_bruto_pct BETWEEN 20 AND 40 THEN 'MEDIO'
+        ELSE 'ALTO'
+    END as clasificacion_margen
+FROM productos_con_precios
+ORDER BY margen_bruto_pct DESC
+    )
+
+  
+[0m16:17:50.259055 [debug] [Thread-1 (]: SQL status: SUCCESS 25 in 0.0 seconds
+[0m16:17:50.262263 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_margen_bruto"
+[0m16:17:50.262693 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_margen_bruto"} */
+
+    drop table if exists `silver_db`.`kpi_margen_bruto__dbt_backup` cascade
+  
+[0m16:17:50.266979 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.268126 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_margen_bruto"
+[0m16:17:50.268567 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_margen_bruto"} */
+
+    rename table `silver_db`.`kpi_margen_bruto` to `silver_db`.`kpi_margen_bruto__dbt_backup`
+  
+[0m16:17:50.295847 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.299108 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_margen_bruto"
+[0m16:17:50.299603 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_margen_bruto"} */
+
+    drop table if exists `silver_db`.`kpi_margen_bruto` cascade
+  
+[0m16:17:50.303906 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.305054 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_margen_bruto"
+[0m16:17:50.305465 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_margen_bruto"} */
+
+    rename table `silver_db`.`kpi_margen_bruto__dbt_tmp` to `silver_db`.`kpi_margen_bruto`
+  
+[0m16:17:50.330101 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.332384 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: COMMIT
+[0m16:17:50.332904 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_margen_bruto"
+[0m16:17:50.333282 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: COMMIT
+[0m16:17:50.334243 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.337098 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_margen_bruto"
+[0m16:17:50.337484 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_margen_bruto"} */
+drop table if exists `silver_db`.`kpi_margen_bruto__dbt_backup`
+[0m16:17:50.359618 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.361377 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_margen_bruto (execute): 16:17:50.200725 => 16:17:50.361130
+[0m16:17:50.361811 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_margen_bruto: Close
+[0m16:17:50.363700 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e71d5f46-7050-4da3-95f4-1f4146d4c66c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2c620fbc0>]}
+[0m16:17:50.364317 [info ] [Thread-1 (]: 3 of 5 OK created sql table model silver_db.kpi_margen_bruto ................... [[32mSUCCESS 25[0m in 0.17s]
+[0m16:17:50.364987 [debug] [Thread-1 (]: Finished running node model.inventario_analytics.kpi_margen_bruto
+[0m16:17:50.365514 [debug] [Thread-1 (]: Began running node model.inventario_analytics.kpi_rotacion_inventario
+[0m16:17:50.366095 [info ] [Thread-1 (]: 4 of 5 START sql table model silver_db.kpi_rotacion_inventario ................. [RUN]
+[0m16:17:50.366774 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.inventario_analytics.kpi_margen_bruto, now model.inventario_analytics.kpi_rotacion_inventario)
+[0m16:17:50.367149 [debug] [Thread-1 (]: Began compiling node model.inventario_analytics.kpi_rotacion_inventario
+[0m16:17:50.370152 [debug] [Thread-1 (]: Writing injected SQL for node "model.inventario_analytics.kpi_rotacion_inventario"
+[0m16:17:50.370791 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_rotacion_inventario (compile): 16:17:50.367718 => 16:17:50.370582
+[0m16:17:50.371341 [debug] [Thread-1 (]: Began executing node model.inventario_analytics.kpi_rotacion_inventario
+[0m16:17:50.375819 [debug] [Thread-1 (]: Writing runtime sql for node "model.inventario_analytics.kpi_rotacion_inventario"
+[0m16:17:50.377151 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_rotacion_inventario"
+[0m16:17:50.377725 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_rotacion_inventario: BEGIN
+[0m16:17:50.378085 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:17:50.388455 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.389219 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_rotacion_inventario"
+[0m16:17:50.389703 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_rotacion_inventario: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_rotacion_inventario"} */
+
+  
+    
+
+  create  table
+    `silver_db`.`kpi_rotacion_inventario__dbt_tmp`
+    
+    
+      as
+    
+    (
+      
+
+WITH ventas_agregadas AS (
+    SELECT
+        codigo_producto,
+        descripcion,
+        SUM(total) as costo_productos_vendidos,
+        COUNT(*) as num_transacciones
+    FROM `silver_db`.`ventas_limpias`
+    WHERE tipo_transaccion = 'VENTA'
+    GROUP BY codigo_producto, descripcion
+),
+inventario_actual AS (
+    SELECT
+        codigo,
+        descripcion,
+        valor_compra * bod_1 as valor_inventario_actual,
+        bod_1 as stock_actual
+    FROM `silver_db`.`productos_master`
+    WHERE bod_1 > 0
+),
+calculo_rotacion AS (
+    SELECT
+        v.codigo_producto,
+        v.descripcion,
+        v.costo_productos_vendidos,
+        i.valor_inventario_actual as inventario_promedio,
+        CASE
+            WHEN i.valor_inventario_actual > 0
+            THEN ROUND(v.costo_productos_vendidos / i.valor_inventario_actual, 2)
+            ELSE 0
+        END as rotacion_inventario,
+        i.stock_actual,
+        v.num_transacciones
+    FROM ventas_agregadas v
+    LEFT JOIN inventario_actual i ON v.codigo_producto = i.codigo
+    WHERE i.codigo IS NOT NULL
+)
+SELECT
+    codigo_producto,
+    descripcion,
+    costo_productos_vendidos,
+    inventario_promedio,
+    rotacion_inventario,
+    CASE
+        WHEN rotacion_inventario < 2 THEN 'BAJA'
+        WHEN rotacion_inventario BETWEEN 2 AND 6 THEN 'MEDIA'
+        ELSE 'ALTA'
+    END as clasificacion_rotacion,
+    stock_actual,
+    num_transacciones
+FROM calculo_rotacion
+    )
+
+  
+[0m16:17:50.471986 [debug] [Thread-1 (]: SQL status: SUCCESS 25 in 0.0 seconds
+[0m16:17:50.475051 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_rotacion_inventario"
+[0m16:17:50.475468 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_rotacion_inventario: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_rotacion_inventario"} */
+
+    drop table if exists `silver_db`.`kpi_rotacion_inventario` cascade
+  
+[0m16:17:50.480991 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.481970 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_rotacion_inventario"
+[0m16:17:50.482353 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_rotacion_inventario: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_rotacion_inventario"} */
+
+    rename table `silver_db`.`kpi_rotacion_inventario__dbt_tmp` to `silver_db`.`kpi_rotacion_inventario`
+  
+[0m16:17:50.533772 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.536275 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_rotacion_inventario: COMMIT
+[0m16:17:50.537990 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_rotacion_inventario"
+[0m16:17:50.538407 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_rotacion_inventario: COMMIT
+[0m16:17:50.539121 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.541138 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.kpi_rotacion_inventario"
+[0m16:17:50.541522 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_rotacion_inventario: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.kpi_rotacion_inventario"} */
+drop table if exists `silver_db`.`kpi_rotacion_inventario__dbt_backup`
+[0m16:17:50.546535 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.547922 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.kpi_rotacion_inventario (execute): 16:17:50.371657 => 16:17:50.547722
+[0m16:17:50.548299 [debug] [Thread-1 (]: On model.inventario_analytics.kpi_rotacion_inventario: Close
+[0m16:17:50.549797 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e71d5f46-7050-4da3-95f4-1f4146d4c66c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2c622cc80>]}
+[0m16:17:50.550431 [info ] [Thread-1 (]: 4 of 5 OK created sql table model silver_db.kpi_rotacion_inventario ............ [[32mSUCCESS 25[0m in 0.18s]
+[0m16:17:50.551058 [debug] [Thread-1 (]: Finished running node model.inventario_analytics.kpi_rotacion_inventario
+[0m16:17:50.552110 [debug] [Thread-1 (]: Began running node model.inventario_analytics.dashboard_kpis_criticos
+[0m16:17:50.552582 [info ] [Thread-1 (]: 5 of 5 START sql table model silver_db.dashboard_kpis_criticos ................. [RUN]
+[0m16:17:50.553281 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.inventario_analytics.kpi_rotacion_inventario, now model.inventario_analytics.dashboard_kpis_criticos)
+[0m16:17:50.553674 [debug] [Thread-1 (]: Began compiling node model.inventario_analytics.dashboard_kpis_criticos
+[0m16:17:50.556761 [debug] [Thread-1 (]: Writing injected SQL for node "model.inventario_analytics.dashboard_kpis_criticos"
+[0m16:17:50.557407 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.dashboard_kpis_criticos (compile): 16:17:50.553915 => 16:17:50.557166
+[0m16:17:50.557775 [debug] [Thread-1 (]: Began executing node model.inventario_analytics.dashboard_kpis_criticos
+[0m16:17:50.562066 [debug] [Thread-1 (]: Writing runtime sql for node "model.inventario_analytics.dashboard_kpis_criticos"
+[0m16:17:50.563494 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.dashboard_kpis_criticos"
+[0m16:17:50.563991 [debug] [Thread-1 (]: On model.inventario_analytics.dashboard_kpis_criticos: BEGIN
+[0m16:17:50.564367 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:17:50.576146 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.576982 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.dashboard_kpis_criticos"
+[0m16:17:50.577448 [debug] [Thread-1 (]: On model.inventario_analytics.dashboard_kpis_criticos: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.dashboard_kpis_criticos"} */
+
+  
+    
+
+  create  table
+    `silver_db`.`dashboard_kpis_criticos__dbt_tmp`
+    
+    
+      as
+    
+    (
+      
+
+SELECT 
+    r.codigo_producto,
+    r.descripcion,
+    r.rotacion_inventario,
+    r.clasificacion_rotacion,
+    m.margen_bruto_pct,
+    m.clasificacion_margen,
+    d.dias_inventario_disponible,
+    d.alerta_stock,
+    c.contribucion_utilidad_total,
+    c.pct_contribucion_total,
+    -- Score compuesto para priorización
+    CASE 
+        WHEN r.rotacion_inventario >= 4 AND m.margen_bruto_pct >= 30 THEN 'ESTRELLA'
+        WHEN r.rotacion_inventario >= 4 AND m.margen_bruto_pct < 30 THEN 'VACA_LECHERA'  
+        WHEN r.rotacion_inventario < 2 AND m.margen_bruto_pct >= 30 THEN 'INCOGNITA'
+        ELSE 'PERRO'
+    END as matriz_bcg
+FROM `silver_db`.`kpi_rotacion_inventario` r
+LEFT JOIN `silver_db`.`kpi_margen_bruto` m ON r.codigo_producto = m.codigo
+LEFT JOIN `silver_db`.`kpi_dias_inventario` d ON r.codigo_producto = d.codigo_producto
+LEFT JOIN (
+    SELECT codigo_producto, 
+           SUM(contribucion_utilidad_total) as contribucion_utilidad_total,
+           AVG(pct_contribucion_total) as pct_contribucion_total
+    FROM `silver_db`.`kpi_contribucion_utilidad`
+    GROUP BY codigo_producto
+) c ON r.codigo_producto = c.codigo_producto
+    )
+
+  
+[0m16:17:50.629733 [debug] [Thread-1 (]: SQL status: SUCCESS 25 in 0.0 seconds
+[0m16:17:50.632749 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.dashboard_kpis_criticos"
+[0m16:17:50.633352 [debug] [Thread-1 (]: On model.inventario_analytics.dashboard_kpis_criticos: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.dashboard_kpis_criticos"} */
+
+    drop table if exists `silver_db`.`dashboard_kpis_criticos` cascade
+  
+[0m16:17:50.638623 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.639631 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.dashboard_kpis_criticos"
+[0m16:17:50.640012 [debug] [Thread-1 (]: On model.inventario_analytics.dashboard_kpis_criticos: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.dashboard_kpis_criticos"} */
+
+    rename table `silver_db`.`dashboard_kpis_criticos__dbt_tmp` to `silver_db`.`dashboard_kpis_criticos`
+  
+[0m16:17:50.662414 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.664648 [debug] [Thread-1 (]: On model.inventario_analytics.dashboard_kpis_criticos: COMMIT
+[0m16:17:50.665083 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.dashboard_kpis_criticos"
+[0m16:17:50.665448 [debug] [Thread-1 (]: On model.inventario_analytics.dashboard_kpis_criticos: COMMIT
+[0m16:17:50.666150 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.668132 [debug] [Thread-1 (]: Using mysql connection "model.inventario_analytics.dashboard_kpis_criticos"
+[0m16:17:50.668510 [debug] [Thread-1 (]: On model.inventario_analytics.dashboard_kpis_criticos: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "inventario", "target_name": "dev", "node_id": "model.inventario_analytics.dashboard_kpis_criticos"} */
+drop table if exists `silver_db`.`dashboard_kpis_criticos__dbt_backup`
+[0m16:17:50.672402 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.674138 [debug] [Thread-1 (]: Timing info for model.inventario_analytics.dashboard_kpis_criticos (execute): 16:17:50.558013 => 16:17:50.673762
+[0m16:17:50.674530 [debug] [Thread-1 (]: On model.inventario_analytics.dashboard_kpis_criticos: Close
+[0m16:17:50.676003 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e71d5f46-7050-4da3-95f4-1f4146d4c66c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2c624f830>]}
+[0m16:17:50.676606 [info ] [Thread-1 (]: 5 of 5 OK created sql table model silver_db.dashboard_kpis_criticos ............ [[32mSUCCESS 25[0m in 0.12s]
+[0m16:17:50.677205 [debug] [Thread-1 (]: Finished running node model.inventario_analytics.dashboard_kpis_criticos
+[0m16:17:50.678787 [debug] [MainThread]: Using mysql connection "master"
+[0m16:17:50.679151 [debug] [MainThread]: On master: BEGIN
+[0m16:17:50.679470 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m16:17:50.689540 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.690070 [debug] [MainThread]: On master: COMMIT
+[0m16:17:50.690425 [debug] [MainThread]: Using mysql connection "master"
+[0m16:17:50.690752 [debug] [MainThread]: On master: COMMIT
+[0m16:17:50.691386 [debug] [MainThread]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m16:17:50.691754 [debug] [MainThread]: On master: Close
+[0m16:17:50.693590 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:17:50.693929 [debug] [MainThread]: Connection 'model.inventario_analytics.dashboard_kpis_criticos' was properly closed.
+[0m16:17:50.694315 [info ] [MainThread]: 
+[0m16:17:50.694751 [info ] [MainThread]: Finished running 5 table models in 0 hours 0 minutes and 0.94 seconds (0.94s).
+[0m16:17:50.695879 [debug] [MainThread]: Command end result
+[0m16:17:50.701880 [info ] [MainThread]: 
+[0m16:17:50.702402 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m16:17:50.702802 [info ] [MainThread]: 
+[0m16:17:50.703195 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 TOTAL=5
+[0m16:17:50.704051 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.6260084, "process_user_time": 2.198366, "process_kernel_time": 0.139726, "process_mem_max_rss": "139284", "process_out_blocks": "2448", "process_in_blocks": "0"}
+[0m16:17:50.704537 [debug] [MainThread]: Command `dbt run` succeeded at 16:17:50.704416 after 1.63 seconds
+[0m16:17:50.704906 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2c98a8cb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2c98a9430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2c98aa330>]}
+[0m16:17:50.705319 [debug] [MainThread]: Flushing usage events

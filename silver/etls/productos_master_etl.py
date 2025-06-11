@@ -50,10 +50,14 @@ def clean_and_consolidate_productos(df):
 @task(name="Guardar productos master")
 def save_productos_master(df_productos, mapeo_codigos):
     """Guarda el archivo maestro de productos y el mapeo de códigos"""
+    from utils.database_config import save_to_mysql
     os.makedirs('result', exist_ok=True)
     
     # Guardar productos master
     df_productos.to_csv('result/productos_master.csv', index=False)
+
+    # Guardar en MySQL
+    save_to_mysql(df_productos, 'productos_master')
     
     # Guardar mapeo para uso posterior
     mapeo_df = pd.DataFrame(list(mapeo_codigos.items()), 

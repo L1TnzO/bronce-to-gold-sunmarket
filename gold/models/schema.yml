@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: silver_db
+    tables:
+      - name: ventas_limpias
+      - name: compras_limpias  
+      - name: productos_master
+      - name: transacciones_unificadas
