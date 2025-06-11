@@ -42,7 +42,7 @@ def unify_transactions(df_ventas, df_compras):
 @task(name="Guardar transacciones unificadas")
 def save_transacciones_unificadas(df_transacciones):
     """Guarda el archivo de transacciones unificadas en CSV y MySQL"""
-    from database_config import save_to_mysql
+    from utils.database_config import save_to_mysql
     
     os.makedirs('result', exist_ok=True)
     

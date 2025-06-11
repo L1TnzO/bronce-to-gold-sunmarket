@@ -1,8 +1,8 @@
 from prefect import flow
-from productos_master_etl import productos_master_etl
-from ventas_etl import ventas_etl
-from compras_etl import compras_etl
-from transacciones_etl import transacciones_etl
+from etls.compras_etl import compras_etl
+from etls.productos_master_etl import productos_master_etl
+from etls.transacciones_etl import transacciones_etl
+from etls.ventas_etl import ventas_etl
 
 @flow(name="ETL Principal - Bronce a Plata")
 def main_etl():

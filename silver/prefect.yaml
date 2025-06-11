@@ -3,7 +3,7 @@
 # control along with your flow code.
 
 # Generic metadata about this project
-name: etls
+name: silver
 prefect-version: 3.4.5
 
 # build section allows you to manage and build docker images
@@ -15,16 +15,21 @@ push: null
 # pull section allows you to provide instructions for cloning this project in remote locations
 pull:
 - prefect.deployments.steps.set_working_directory:
-    directory: /home/enzo/universidad/tingdatos/taller_3_v2/silver/etls
+    directory: /home/enzo/universidad/tingdatos/taller_3_v2/silver
 
 # the deployments section allows you to provide configuration for deploying flows
 deployments:
-- name: etl_bronze_to_silver
+- name: bronze_to_silver
   version: null
   tags: []
   concurrency_limit: null
-  description: Pipeline completo de ETL para transformar datos bronze a silver
-  entrypoint: main_orchestrator.py:pipeline_etl_completo
+  description: "Flow principal que orquesta todo el proceso ETL.\n\nSecuencia de ejecuci\xF3\
+    n:\n1. Productos Master - Consolida y limpia el cat\xE1logo de productos\n2. Ventas\
+    \ ETL - Procesa ventas con integridad referencial\n3. Compras ETL - Procesa compras\
+    \ con integridad referencial  \n4. Transacciones ETL - Unifica ventas y compras\
+    \ para an\xE1lisis integral\n\nGarantiza integridad referencial y trazabilidad\
+    \ completa."
+  entrypoint: main_orchestrator.py:main_etl
   parameters: {}
   work_pool:
     name: local-pool

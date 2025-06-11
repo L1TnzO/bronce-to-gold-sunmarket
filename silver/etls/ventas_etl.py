@@ -6,7 +6,7 @@ import numpy as np
 @task(name="Leer ventas bronce")
 def read_ventas_bronze():
     """Lee el archivo de ventas desde la capa bronce"""
-    df = pd.read_csv('../../bronze/ventas.csv')
+    df = pd.read_csv('../bronze/ventas.csv')
     return df
 
 @task(name="Leer mapeo de códigos")
@@ -65,7 +65,7 @@ def clean_ventas_with_integrity(df_ventas, mapeo_codigos, df_productos):
 @task(name="Guardar ventas limpias")
 def save_ventas_limpias(df_ventas):
     """Guarda el archivo de ventas limpias en CSV y MySQL"""
-    from database_config import save_to_mysql
+    from utils.database_config import save_to_mysql
     
     os.makedirs('result', exist_ok=True)
     

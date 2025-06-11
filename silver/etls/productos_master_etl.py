@@ -5,7 +5,7 @@ import os
 @task(name="Leer productos bronce")
 def read_productos_bronze():
     """Lee el archivo de productos desde la capa bronce"""
-    df = pd.read_csv('../../bronze/productos.csv')
+    df = pd.read_csv('../bronze/productos.csv')
     return df
 
 @task(name="Limpiar y consolidar productos")
